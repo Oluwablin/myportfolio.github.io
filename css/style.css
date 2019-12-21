@@ -251,13 +251,13 @@ li {
             from(rgba(0, 0, 0, 0.2)),
             to(rgba(0, 0, 0, 0.2))
         ),
-        url("../img/hero.jpg");
+        url("../img/shine.jpg");
     background-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.2),
             rgba(0, 0, 0, 0.2)
         ),
-        url("../img/hero.jpg");
+        url("../img/shine.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -312,6 +312,10 @@ li {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+}
+
+#header-btn:hover {
+    color-adjust: [exact];
 }
 
 #portfolio {
