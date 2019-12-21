@@ -1,4 +1,4 @@
-
+<?php ob_start(); session_start(); ?>
 
 <!doctype html>
 <html lang="en">
@@ -214,7 +214,7 @@
                                 <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Links:</strong></li>
                                 <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="https://github.com/oluwablin" target="_blank">Github</a></li>
                                 <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank">LinkedIn</a></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="/img/Oyeleke Oluseun Emmanuel resume.pdf" download>Resume</a></li>
+                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="img/OyelekeOluseunEmmanuelresume.pdf" download>Resume</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -230,10 +230,10 @@
 
             <div class="contact-section">
                 <form action="mail.php" method="post" class="contact-form">
-                    <?php if (isset($_SESSION['email'])) {
+                    <!-- <?php if (isset($_SESSION['email'])) {
                         echo "<p class='email-message'>{$_SESSION['email']}</p>";
                         unset($_SESSION['email']);
-                    } ?> 
+                    } ?>  -->
                     <p class="animated" data-animation="fadeIn" data-animation-delay="200"><label for="email">Email</label><input type="email" name="email" id="email" placeholder="Email"></p>
                     <p class="animated" data-animation="fadeIn" data-animation-delay="200"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Subject"></p>
 
