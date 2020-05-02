@@ -251,13 +251,13 @@ li {
             from(rgba(0, 0, 0, 0.2)),
             to(rgba(0, 0, 0, 0.2))
         ),
-        url("../img/shine.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588439039/shine_eggvcf.jpg");
     background-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.2),
             rgba(0, 0, 0, 0.2)
         ),
-        url("../img/shine.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588439039/shine_eggvcf.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -454,9 +454,9 @@ li {
 
 #skills {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))),
-        url("../img/skills.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588439054/skills_q9votk.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("../img/skills.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588439054/skills_q9votk.jpg");
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
@@ -567,13 +567,13 @@ li {
             from(rgba(0, 0, 0, 0.7)),
             to(rgba(0, 0, 0, 0.7))
         ),
-        url("../img/footer1.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588438970/footer1_opi6ke.jpg");
     background-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)
         ),
-        url("../img/footer1.jpg");
+        url("https://res.cloudinary.com/oluwablin/image/upload/v1588438970/footer1_opi6ke.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
