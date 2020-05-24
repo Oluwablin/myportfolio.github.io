@@ -174,7 +174,7 @@
             <div class="about-section">
                 <div class="about-me">
                     <div class="about-img animated" data-animation="fadeIn" data-animation-delay="200">
-                        <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg" alt="" class="img img-responsive mb-12" height="200" width="auto">
+                        <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg" alt="" class="img img-responsive mb-12" height="150" width="auto">
                     </div>
                     <div class="about-desc animated" data-animation="fadeIn" data-animation-delay="200">
                         <p>A Self-taught Web Developer who is extremely passionate and motivated to solve problems that affect lives while building a career in Software Development, and to produce high quality responsive websites that satisfy customer needs. My love for code pushes me to improve daily and expand my knowledge of both frontend and backend.</p>
@@ -219,9 +219,9 @@
                         <li>
                             <ul>
                                 <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Links:</strong></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="https://github.com/oluwablin" target="_blank">Github</a></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank">LinkedIn</a></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><a href="img/OyelekeOluseunEmmanuelresume.pdf" download>Resume</a></li>
+                                <li class="animated" id="href" data-animation="fadeIn" data-animation-delay="200"><a href="https://github.com/oluwablin" target="_blank">Github</a></li>
+                                <li class="animated" id="ref" data-animation="fadeIn" data-animation-delay="200"><a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank">LinkedIn</a></li>
+                                <li class="animated" id="ef" data-animation="fadeIn" data-animation-delay="200"><a href="img/OyelekeOluseunEmmanuelresume.pdf" download>Resume</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -274,6 +274,29 @@
 		<!-- Latest compiled JavaScript -->
 		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
     <script type="" src="js/script.js"></script>
+
+    <script>
+        $($(document).ready(function () {
+            $("#href").mouseover(function(){
+                $("#href").css("background-color", "black");
+            });
+            $("#href").mouseout(function(){
+                $("#href").css("background-color", "var(--main-color)");
+            });
+            $("#ref").mouseover(function(){
+                $("#ref").css("background-color", "black");
+            });
+            $("#ref").mouseout(function(){
+                $("#ref").css("background-color", "var(--main-color)");
+            });
+            $("#ef").mouseover(function(){
+                $("#ef").css("background-color", "black");
+            });
+            $("#ef").mouseout(function(){
+                $("#ef").css("background-color", "var(--main-color)");
+            });
+        }));
+    </script>
 
 </body>
 
