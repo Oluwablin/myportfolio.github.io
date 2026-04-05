@@ -10,7 +10,8 @@
     <meta name="keywords" content="Oyeleke Oluseun, Full Stack Developer, Laravel, PHP, Python, React, Software Engineer, Nigeria, UK" />
     <meta property="og:title" content="Oyeleke Oluseun | Full-Stack Developer" />
     <meta property="og:description" content="Full-Stack Software Engineer building beautiful, scalable web applications." />
-    <meta property="og:image" content="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg" />
+    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicon -->
@@ -22,8 +23,8 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 
-    <!-- EmailJS — replace YOUR_PUBLIC_KEY, YOUR_SERVICE_ID, YOUR_TEMPLATE_ID -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Runtime config (non-secret values only) -->
+    <script src="js/site-config.js"></script>
 
     <style>
     /* ============================================================
@@ -1058,7 +1059,7 @@
                     <a href="#projects" class="btn-primary">
                         <i class="fas fa-rocket"></i> View My Work
                     </a>
-                    <a href="resume.html" class="btn-outline" target="_blank" rel="noopener">
+                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
                         <i class="fas fa-file-pdf"></i> View CV
                     </a>
                 </div>
@@ -1082,7 +1083,7 @@
             <div class="hero-photo-wrap">
                 <div class="hero-photo-ring"></div>
                 <img
-                    src="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg"
+                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
                     alt="Oyeleke Oluseun Emmanuel"
                     class="hero-photo"
                     onerror="this.src='img/good.jpg'"
@@ -1119,7 +1120,7 @@
         <div class="about-grid">
             <div class="reveal-left">
                 <img
-                    src="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg"
+                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
                     alt="Oyeleke Oluseun Emmanuel"
                     class="about-photo"
                     onerror="this.src='img/good.jpg'"
@@ -1197,7 +1198,7 @@
                     <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="btn-outline">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
                     </a>
-                    <a href="resume.html" class="btn-outline" target="_blank" rel="noopener">
+                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
                         <i class="fas fa-file-pdf"></i> View CV
                     </a>
                 </div>
@@ -1230,7 +1231,7 @@
             <!-- 1. AI CV Tailoring Tool -->
             <div class="project-card featured" data-category="ai personal">
                 <img
-                    src="https://res.cloudinary.com/oluwablin/image/upload/v1588439004/miniclassroom_s5cxfs.png"
+                    src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://ai-cv-tailoring-tool-89cy.vercel.app"
                     alt="AI CV Tailoring Tool"
                     class="project-thumb"
                     onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🤖</div>'"
@@ -1240,217 +1241,257 @@
                     <span class="project-category">AI · Python · React</span>
                     <h3 class="project-title">AI CV Tailoring Tool</h3>
                     <p class="project-desc">
-                        An AI-powered SaaS platform that tailors CVs to specific job descriptions using OpenAI.
-                        Users upload their CV (PDF/DOCX), paste a job description, and receive an ATS-optimised,
-                        downloadable CV in seconds. Built with Python FastAPI backend and React frontend, deployed on Vercel.
+                        An AI-powered SaaS platform that tailors CVs to specific job descriptions using OpenAI,
+                        with parsing, ATS optimization and downloadable output.
                     </p>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
                         <span class="project-tag">FastAPI</span>
                         <span class="project-tag">React</span>
                         <span class="project-tag">OpenAI API</span>
-                        <span class="project-tag">SendGrid</span>
                         <span class="project-tag">Vercel</span>
                     </div>
                     <div class="project-links">
                         <a href="https://ai-cv-tailoring-tool-89cy.vercel.app/" target="_blank" rel="noopener" class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
-                        <a href="https://github.com/Kure1024/Ai-CV-tailoring-tool" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> GitHub
+                        <a href="https://github.com/Oluwablin?tab=repositories" target="_blank" rel="noopener" class="project-link ghost">
+                            <i class="fab fa-github"></i> My GitHub
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. OfficemateHR -->
+            <!-- 2. Volunteer Africa -->
             <div class="project-card" data-category="fullstack client">
-                <img src="img/officematehr.png" alt="OfficemateHR" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>👥</div>'" />
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://volunteer.africa/en" alt="Volunteer Africa" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🌍</div>'" />
                 <div class="project-body">
-                    <span class="project-category">Full-Stack · Laravel · API</span>
-                    <h3 class="project-title">OfficemateHR</h3>
-                    <p class="project-desc">
-                        Enterprise HR management software covering the full employment lifecycle — onboarding,
-                        task management, leave &amp; travel, payroll processing and employee self-service. Used
-                        by multiple organisations across Nigeria.
-                    </p>
+                    <span class="project-category">Client Work · Web Platform</span>
+                    <h3 class="project-title">Volunteer Africa</h3>
+                    <p class="project-desc">Program and content platform with real-world client delivery and production maintenance.</p>
                     <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
                         <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">REST API</span>
-                        <span class="project-tag">Bootstrap</span>
+                        <span class="project-tag">CakePHP</span>
+                        <span class="project-tag">Client Work</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://hr.officemate.ng" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Site
-                        </a>
-                        <a href="https://github.com/cavideldeveloper/OfficemateHR-api" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                        <a href="https://volunteer.africa/en" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. Officemate Accounting -->
+            <!-- 3. StagingDC -->
             <div class="project-card" data-category="fullstack client">
-                <img src="img/accounting.png" alt="Officemate Accounting" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>📊</div>'" />
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://stagingdc.com" alt="StagingDC" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'" />
                 <div class="project-body">
-                    <span class="project-category">Full-Stack · Laravel · API</span>
-                    <h3 class="project-title">Officemate Accounting</h3>
-                    <p class="project-desc">
-                        Core accounting and bookkeeping SaaS — payables/receivables, petty cash management,
-                        investment tracking, financial reporting. Cross-platform (web, Android, iOS) with
-                        real-time dashboards.
-                    </p>
+                    <span class="project-category">Client Work · Full-Stack</span>
+                    <h3 class="project-title">StagingDC</h3>
+                    <p class="project-desc">Public-facing platform with full-stack architecture, delivery and maintenance work.</p>
                     <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">jQuery</span>
-                        <span class="project-tag">REST API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://accounting.officemate.ng/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Site
-                        </a>
-                        <a href="https://github.com/cavideldeveloper/officematedemo" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Craneburg HR -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/craneburg.jpeg" alt="Craneburg HR" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏗️</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Full-Stack · Laravel</span>
-                    <h3 class="project-title">Craneburg HR Software</h3>
-                    <p class="project-desc">
-                        Bespoke HR platform for a construction company. Manages employee attendance, employment
-                        requests, transfers, promotions, terminations and a fully integrated payroll system
-                        with role-based access control.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">Bootstrap</span>
-                        <span class="project-tag">jQuery</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://bitbucket.org/sbscphpteam/cranebug_v1/src" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-bitbucket"></i> Bitbucket
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Lancers Web App -->
-            <div class="project-card" data-category="fullstack personal">
-                <div class="project-thumb-placeholder">💰</div>
-                <div class="project-body">
-                    <span class="project-category">Full-Stack · Laravel</span>
-                    <h3 class="project-title">Lancers Web App</h3>
-                    <p class="project-desc">
-                        Freelance cost-estimator platform allowing users to calculate project costs factoring
-                        in work hours, subcontractors and profit margins. Built with Laravel backend and dynamic
-                        JavaScript frontend.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
                         <span class="project-tag">PHP</span>
                         <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Bootstrap</span>
-                        <span class="project-tag">jQuery</span>
+                        <span class="project-tag">MySQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://dev.lancers.app" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Site
-                        </a>
-                        <a href="https://github.com/Oluwablin/lancers" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                        <a href="https://stagingdc.com" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 6. KPI App -->
-            <div class="project-card" data-category="fullstack personal">
+            <!-- 4. SMSVend -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://www.smsvend.com" alt="SMSVend" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>✉️</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · API Platform</span>
+                    <h3 class="project-title">SMSVend</h3>
+                    <p class="project-desc">Messaging product with backend API flows and client-facing delivery tooling.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">REST API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.smsvend.com" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Officemate ERP -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://erp.officemate.ng" alt="Officemate ERP" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>👥</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · ERP</span>
+                    <h3 class="project-title">Officemate ERP</h3>
+                    <p class="project-desc">Enterprise HR and operations portal for managing employee lifecycle and workflows.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://erp.officemate.ng" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Page Financials Payroll -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://payroll.pageginancials.com" alt="Page Financials Payroll" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>💳</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Payroll</span>
+                    <h3 class="project-title">Page Financials Payroll</h3>
+                    <p class="project-desc">Payroll and HRMS-focused system with backend process automation.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">HRMS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://payroll.pageginancials.com" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. OgaRecharge -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://ogarecharge.com" alt="OgaRecharge" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>⚡</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Fintech</span>
+                    <h3 class="project-title">OgaRecharge</h3>
+                    <p class="project-desc">Digital recharge and payments platform with integrated transaction workflows.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">Payment APIs</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://ogarecharge.com" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. MultiTexter -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://www.multitexter.com" alt="MultiTexter" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>📨</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Messaging</span>
+                    <h3 class="project-title">MultiTexter</h3>
+                    <p class="project-desc">Bulk messaging product for campaign operations and client communication workflows.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">SMS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://www.multitexter.com" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Inventory System -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://66.70.202.147/inventory" alt="Inventory System" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>📦</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Internal Tool</span>
+                    <h3 class="project-title">Inventory System</h3>
+                    <p class="project-desc">Internal inventory platform for stock visibility and operational reporting.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://66.70.202.147/inventory" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Internal ERP Portal -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://66.70.202.147:2000" alt="Internal ERP Portal" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏭</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Operations</span>
+                    <h3 class="project-title">Internal ERP Portal</h3>
+                    <p class="project-desc">ERP-style portal for enterprise process management and internal operations.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">Enterprise</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://66.70.202.147:2000" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Task Management System -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://66.70.202.147/task" alt="Task Management System" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>✅</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Productivity</span>
+                    <h3 class="project-title">Task Management System</h3>
+                    <p class="project-desc">Task assignment and delivery tracking tool for teams and managers.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Workflow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://66.70.202.147/task" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Craneburg ERP -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://craneburg.vercel.app" alt="Craneburg ERP" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏗️</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · ERP</span>
+                    <h3 class="project-title">Craneburg ERP</h3>
+                    <p class="project-desc">Enterprise suite covering HR, payroll and project operations.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://craneburg.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. KPI -->
+            <div class="project-card" data-category="personal">
                 <div class="project-thumb-placeholder">📈</div>
                 <div class="project-body">
-                    <span class="project-category">Full-Stack · PHP</span>
-                    <h3 class="project-title">KPI — Performance Review App</h3>
-                    <p class="project-desc">
-                        An application that allows employees to submit feedback toward each other's
-                        performance reviews, track KPIs and generate performance reports for management.
-                        Received 2 GitHub stars.
-                    </p>
+                    <span class="project-category">Personal · Full-Stack</span>
+                    <h3 class="project-title">KPI Performance Review App</h3>
+                    <p class="project-desc">Performance review and KPI tracking application.</p>
                     <div class="project-tags">
                         <span class="project-tag">PHP</span>
                         <span class="project-tag">MySQL</span>
-                        <span class="project-tag">JavaScript</span>
                         <span class="project-tag">Bootstrap</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Oluwablin/KPI" target="_blank" rel="noopener" class="project-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                        <a href="https://github.com/Oluwablin/KPI" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 7. Mini Classroom -->
-            <div class="project-card" data-category="fullstack personal">
-                <img
-                    src="https://res.cloudinary.com/oluwablin/image/upload/v1588439004/miniclassroom_s5cxfs.png"
-                    alt="Mini Classroom"
-                    class="project-thumb"
-                    onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🎓</div>'"
-                />
-                <div class="project-body">
-                    <span class="project-category">Full-Stack · Laravel</span>
-                    <h3 class="project-title">Mini Classroom</h3>
-                    <p class="project-desc">
-                        A virtual learning platform where tutors can teach students online and students can
-                        enrol in various courses. Features include course management, video lessons,
-                        assignments and progress tracking.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">jQuery</span>
-                        <span class="project-tag">Bootstrap</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/Aeolus_MiniClassroom" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 8. Blog RSS Aggregator -->
+            <!-- 14. Blog RSS -->
             <div class="project-card" data-category="personal">
                 <div class="project-thumb-placeholder">📰</div>
                 <div class="project-body">
-                    <span class="project-category">JavaScript · Node.js</span>
+                    <span class="project-category">Personal · Node.js</span>
                     <h3 class="project-title">Blog RSS Aggregator</h3>
-                    <p class="project-desc">
-                        A blog aggregator that lists all blogs I follow and polls RSS feeds every minute to
-                        check for updates, displaying new posts in real time with push notifications.
-                    </p>
+                    <p class="project-desc">Personal feed aggregator that checks subscribed RSS sources for updates.</p>
                     <div class="project-tags">
                         <span class="project-tag">JavaScript</span>
                         <span class="project-tag">Node.js</span>
                         <span class="project-tag">RSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Oluwablin/blog" target="_blank" rel="noopener" class="project-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                        <a href="https://github.com/Oluwablin/blog" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
@@ -1610,15 +1651,11 @@
             <div class="reveal-right">
                 <div class="contact-form-card">
                     <!--
-                        EMAILJS SETUP (free, works on GitHub Pages & Vercel):
-                        1. Sign up at https://www.emailjs.com/
-                        2. Create a service (Gmail/Outlook) → note YOUR_SERVICE_ID
-                        3. Create an email template → note YOUR_TEMPLATE_ID
-                           Template variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
-                        4. Copy your Public Key from Account > API Keys
-                        5. Replace the three placeholders below with your real values.
+                        Contact form uses a secure backend endpoint.
+                        Do not store private credentials in this HTML file.
                     -->
                     <form id="contactForm">
+                        <input type="text" name="website" id="cf-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="cf-name">Full Name *</label>
@@ -1793,14 +1830,12 @@ window.addEventListener('scroll', () => {
 // ── Year ───────────────────────────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ── EmailJS Contact Form ───────────────────────────────────────
-// ⚠️  Replace the three values below with your real EmailJS credentials.
-// Sign up free at https://www.emailjs.com/ — works on GitHub Pages & Vercel.
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account > API Keys
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services tab
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates tab
-
-emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+// ── Contact Form (secure backend endpoint) ─────────────────────
+const CONTACT_API_URL =
+    (window.PORTFOLIO_CONFIG && window.PORTFOLIO_CONFIG.contactApiUrl)
+    || (window.location.hostname.includes('github.io')
+        ? 'https://oyelekeseun.vercel.app/api/contact'
+        : '/api/contact');
 
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -1814,6 +1849,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const email   = document.getElementById('cf-email').value.trim();
     const subject = document.getElementById('cf-subject').value.trim();
     const message = document.getElementById('cf-message').value.trim();
+    const website = document.getElementById('cf-website').value.trim();
 
     if (!name || !email || !subject || !message) {
         msg.textContent = 'Please fill in all fields.';
@@ -1825,14 +1861,31 @@ document.getElementById('contactForm').addEventListener('submit', async function
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
 
     try {
-        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this);
+        const response = await fetch(CONTACT_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                subject,
+                message,
+                website
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Could not send message');
+        }
+
         msg.textContent = '✅ Message sent! I\'ll get back to you within 24 hours.';
         msg.className = 'form-message success';
         this.reset();
     } catch (err) {
         // Fallback: open mailto link so the message is never lost
         const mailto = `mailto:oyelekeseun@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\n\n' + message)}`;
-        msg.innerHTML = '⚠️ Could not send automatically. <a href="' + mailto + '" style="color:inherit;font-weight:700;">Click here to email directly</a> — or set up EmailJS credentials in the page source.';
+        msg.innerHTML = '⚠️ Could not send automatically. <a href="' + mailto + '" style="color:inherit;font-weight:700;">Click here to email directly</a>.';
         msg.className = 'form-message error';
     } finally {
         btn.disabled = false;
