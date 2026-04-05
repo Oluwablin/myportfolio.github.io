@@ -1183,10 +1183,12 @@
             "time": "2022-05-24T11:49:31+00:00"
         }
     ],
+    "content-hash": "d751713988987e9331980363e24189ce",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,438 +1,1938 @@
-<?php ob_start(); session_start(); ?>
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OyelekeSeun</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Oyeleke Oluseun | Full-Stack Developer</title>
+    <meta name="description" content="Oyeleke Oluseun Emmanuel — Full-Stack Software Engineer specialising in Laravel, Python, React and AI-powered web applications." />
+    <meta name="keywords" content="Oyeleke Oluseun, Full Stack Developer, Laravel, PHP, Python, React, Software Engineer, Nigeria, UK" />
+    <meta property="og:title" content="Oyeleke Oluseun | Full-Stack Developer" />
+    <meta property="og:description" content="Full-Stack Software Engineer building beautiful, scalable web applications." />
+    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
+    <meta name="twitter:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="stylesheet" href="css/myportfolio-bounce.css">
-    <link rel="stylesheet" href="css/myportfolio-animate.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/oluwablin/image/upload/v1588439022/my_logo_iyufqd.jpg" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+
+    <!-- Runtime config (non-secret values only) -->
+    <script src="js/site-config.js"></script>
+
+    <style>
+    /* ============================================================
+       THEME VARIABLES
+    ============================================================ */
+    :root {
+        --bg:         #ffffff;
+        --bg2:        #f1f5f9;
+        --card:       #ffffff;
+        --border:     #e2e8f0;
+        --text:       #1e293b;
+        --muted:      #64748b;
+        --accent:     #6366f1;
+        --accent2:    #8b5cf6;
+        --accent-rgb: 99,102,241;
+        --btn-text:   #ffffff;
+        --nav-bg:     rgba(255,255,255,0.85);
+        --shadow:     0 4px 24px rgba(99,102,241,.10);
+        --shadow-lg:  0 10px 40px rgba(99,102,241,.18);
+        --tag-bg:     #ede9fe;
+        --tag-text:   #6366f1;
+        --hero-text:  #1e293b;
+    }
+    [data-theme="dark"] {
+        --bg:         #0f172a;
+        --bg2:        #1e293b;
+        --card:       #1e293b;
+        --border:     #334155;
+        --text:       #f1f5f9;
+        --muted:      #94a3b8;
+        --accent:     #818cf8;
+        --accent2:    #a78bfa;
+        --accent-rgb: 129,140,248;
+        --btn-text:   #0f172a;
+        --nav-bg:     rgba(15,23,42,0.90);
+        --shadow:     0 4px 24px rgba(0,0,0,.35);
+        --shadow-lg:  0 10px 40px rgba(0,0,0,.50);
+        --tag-bg:     #312e81;
+        --tag-text:   #a5b4fc;
+        --hero-text:  #f1f5f9;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        transition: background .35s ease, color .35s ease;
+        overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ============================================================
+       SCROLLBAR
+    ============================================================ */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 96px 0; }
+    .section-label {
+        display: inline-block;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: var(--tag-bg);
+        padding: .3rem .85rem;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+    }
+    .section-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.9rem, 4vw, 2.75rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .section-sub {
+        font-size: 1.05rem;
+        color: var(--muted);
+        max-width: 560px;
+        line-height: 1.7;
+        margin-bottom: 3rem;
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 1000;
+        background: var(--nav-bg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+        transition: background .35s, border-color .35s;
+    }
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+    }
+    .nav-logo {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    .nav-links a {
+        font-size: .93rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: color .2s;
+        position: relative;
+    }
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 0; right: 0;
+        height: 2px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transition: transform .2s;
+        border-radius: 2px;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    /* Theme toggle */
+    .theme-toggle {
+        width: 46px; height: 24px;
+        background: var(--border);
+        border-radius: 999px;
+        position: relative;
+        transition: background .3s;
+        cursor: pointer;
+    }
+    .theme-toggle::after {
+        content: '';
+        position: absolute;
+        top: 3px; left: 3px;
+        width: 18px; height: 18px;
+        border-radius: 50%;
+        background: var(--accent);
+        transition: transform .3s;
+    }
+    [data-theme="dark"] .theme-toggle::after { transform: translateX(22px); }
+
+    /* Hamburger */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: .35rem;
+    }
+    .hamburger span {
+        display: block;
+        width: 24px; height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: transform .3s, opacity .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: var(--nav-bg);
+        border-top: 1px solid var(--border);
+        padding: 1rem 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+        padding: .75rem 0;
+        font-weight: 500;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+        transition: color .2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 68px;
+    }
+    /* Animated gradient mesh background */
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 800px 600px at 70% 40%, rgba(var(--accent-rgb),.12) 0%, transparent 70%),
+            radial-gradient(ellipse 600px 500px at 20% 80%, rgba(139,92,246,.10) 0%, transparent 70%);
+        animation: meshPulse 8s ease-in-out infinite alternate;
+    }
+    @keyframes meshPulse {
+        0%  { opacity: 1; transform: scale(1)    rotate(0deg); }
+        100%{ opacity: .7; transform: scale(1.08) rotate(3deg); }
+    }
+    /* Floating blobs */
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        animation: blobFloat 12s ease-in-out infinite alternate;
+    }
+    .blob-1 {
+        width: 520px; height: 520px;
+        background: rgba(var(--accent-rgb),.09);
+        top: -120px; right: -80px;
+        animation-delay: 0s;
+    }
+    .blob-2 {
+        width: 380px; height: 380px;
+        background: rgba(139,92,246,.08);
+        bottom: -60px; left: -60px;
+        animation-delay: -4s;
+    }
+    @keyframes blobFloat {
+        0%  { transform: translate(0,0)     scale(1); }
+        100%{ transform: translate(30px,40px) scale(1.08); }
+    }
+    .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: var(--tag-bg);
+        color: var(--accent);
+        padding: .4rem 1rem;
+        border-radius: 999px;
+        font-size: .8rem;
+        font-weight: 600;
+        letter-spacing: .05em;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp .6s ease both;
+    }
+    .hero-badge .dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0%,100%{ transform: scale(1); opacity:1; }
+        50%     { transform: scale(1.5); opacity:.6; }
+    }
+    .hero-name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: var(--hero-text);
+        margin-bottom: .75rem;
+        animation: fadeInUp .7s .1s ease both;
+    }
+    .hero-name span {
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hero-role {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+        min-height: 2em;
+        animation: fadeInUp .8s .2s ease both;
+    }
+    .typing-cursor::after {
+        content: '|';
+        animation: blink .75s step-end infinite;
+        color: var(--accent);
+    }
+    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+    .hero-bio {
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.75;
+        max-width: 520px;
+        margin-bottom: 2.25rem;
+        animation: fadeInUp .9s .3s ease both;
+    }
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 1s .4s ease both;
+    }
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        color: #fff;
+        padding: .85rem 2rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: .95rem;
+        transition: transform .2s, box-shadow .2s;
+        box-shadow: 0 4px 20px rgba(var(--accent-rgb),.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(var(--accent-rgb),.5); }
+    .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        border: 2px solid var(--border);
+        color: var(--text);
+        padding: .83rem 1.8rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: .95rem;
+        transition: border-color .2s, color .2s, transform .2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    .hero-socials {
+        display: flex;
+        gap: 1rem;
+        animation: fadeInUp 1.1s .5s ease both;
+    }
+    .hero-social-link {
+        width: 42px; height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid var(--border);
+        border-radius: 50%;
+        color: var(--muted);
+        font-size: 1rem;
+        transition: border-color .2s, color .2s, transform .2s;
+    }
+    .hero-social-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-3px);
+    }
+
+    /* Profile image */
+    .hero-photo-wrap {
+        position: relative;
+        animation: fadeInRight 1s .3s ease both;
+    }
+    .hero-photo {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        z-index: 1;
+    }
+    .hero-photo-ring {
+        position: absolute;
+        inset: -16px;
+        border-radius: 50%;
+        border: 2px dashed rgba(var(--accent-rgb),.35);
+        animation: spin 18s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-stats {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+    .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: .85rem 1.25rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+        min-width: 90px;
+    }
+    .stat-num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--accent);
+    }
+    .stat-lbl { font-size: .73rem; color: var(--muted); font-weight: 500; }
+
+    /* Scroll hint */
+    .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .4rem;
+        color: var(--muted);
+        font-size: .78rem;
+        animation: fadeIn 2s 1.5s ease both;
+    }
+    .scroll-hint i { animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce {
+        0%,100%{ transform:translateY(0); }
+        50%     { transform:translateY(6px); }
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about { background: var(--bg2); }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    .about-photo {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: var(--shadow-lg);
+        border: 3px solid var(--border);
+    }
+    .about-text p {
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.78;
+        margin-bottom: 1rem;
+    }
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .skill-cat h4 {
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: .6rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-tag {
+        background: var(--tag-bg);
+        color: var(--tag-text);
+        padding: .28rem .75rem;
+        border-radius: 999px;
+        font-size: .78rem;
+        font-weight: 600;
+    }
+    .about-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       PROJECTS
+    ============================================================ */
+    .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .6rem;
+        margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+        padding: .45rem 1.2rem;
+        border-radius: 999px;
+        font-size: .86rem;
+        font-weight: 600;
+        border: 2px solid var(--border);
+        color: var(--muted);
+        background: var(--card);
+        transition: all .2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--tag-bg);
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        gap: 1.75rem;
+    }
+    .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform .3s, box-shadow .3s;
+        display: flex;
+        flex-direction: column;
+    }
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+    .project-thumb {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        background: var(--bg2);
+        border-bottom: 1px solid var(--border);
+    }
+    .project-thumb-placeholder {
+        width: 100%;
+        height: 210px;
+        background: linear-gradient(135deg, var(--tag-bg), var(--bg2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-category {
+        display: inline-block;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: .6rem;
+    }
+    .project-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: .6rem;
+    }
+    .project-desc {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.65;
+        flex: 1;
+        margin-bottom: 1.2rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.2rem; }
+    .project-tag {
+        background: var(--bg2);
+        color: var(--muted);
+        padding: .22rem .65rem;
+        border-radius: 6px;
+        font-size: .73rem;
+        font-weight: 600;
+        border: 1px solid var(--border);
+    }
+    .project-links { display: flex; gap: .75rem; }
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        font-size: .84rem;
+        font-weight: 600;
+        color: var(--accent);
+        border: 1.5px solid var(--accent);
+        padding: .38rem .9rem;
+        border-radius: 8px;
+        transition: background .2s, color .2s;
+    }
+    .project-link:hover { background: var(--accent); color: #fff; }
+    .project-link.ghost { border-color: var(--border); color: var(--muted); }
+    .project-link.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Featured badge */
+    .project-card.featured {
+        border-color: rgba(var(--accent-rgb),.4);
+        box-shadow: 0 0 0 2px rgba(var(--accent-rgb),.12), var(--shadow);
+    }
+    .featured-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .3rem;
+        background: linear-gradient(135deg,var(--accent),var(--accent2));
+        color: #fff;
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: .22rem .7rem;
+        border-radius: 999px;
+        margin-bottom: .6rem;
+    }
+
+    /* ============================================================
+       SKILLS
+    ============================================================ */
+    #skills { background: var(--bg2); }
+    .skills-section-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.25rem;
+    }
+    .skill-block {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: transform .2s, box-shadow .2s;
+    }
+    .skill-block:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .skill-block i {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-bottom: .75rem;
+    }
+    .skill-block-name {
+        font-size: .88rem;
+        font-weight: 600;
+        color: var(--text);
+    }
+    .skill-block-level {
+        font-size: .73rem;
+        color: var(--muted);
+        margin-top: .25rem;
+    }
+
+    /* ============================================================
+       EXPERIENCE
+    ============================================================ */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: .5rem; top: .5rem; bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .timeline-item {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-left: 1.5rem;
+    }
+    .timeline-dot {
+        position: absolute;
+        left: -1.75rem;
+        top: .35rem;
+        width: 14px; height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid var(--bg);
+        box-shadow: 0 0 0 3px rgba(var(--accent-rgb),.25);
+    }
+    .timeline-date {
+        font-size: .78rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: .35rem;
+    }
+    .timeline-role {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text);
+    }
+    .timeline-company {
+        font-size: .9rem;
+        color: var(--muted);
+        margin-bottom: .6rem;
+    }
+    .timeline-desc {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.7;
+    }
+    .timeline-desc li { margin-bottom: .3rem; padding-left: 1rem; position: relative; }
+    .timeline-desc li::before { content:'▹'; position:absolute; left:0; color:var(--accent); }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+        align-items: start;
+    }
+    .contact-info h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+    }
+    .contact-info p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: .97rem;
+        margin-bottom: 2rem;
+    }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: .85rem;
+        margin-bottom: 1rem;
+        color: var(--muted);
+        font-size: .93rem;
+    }
+    .contact-item i {
+        width: 38px; height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--tag-bg);
+        color: var(--accent);
+        border-radius: 10px;
+        font-size: .95rem;
+        flex-shrink: 0;
+    }
+    .contact-socials-row {
+        display: flex;
+        gap: .75rem;
+        margin-top: 1.5rem;
+    }
+    .social-btn {
+        width: 42px; height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--card);
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        color: var(--muted);
+        font-size: 1rem;
+        transition: all .2s;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+
+    /* Form */
+    .contact-form-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+        display: block;
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: .45rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        padding: .85rem 1rem;
+        font-size: .95rem;
+        color: var(--text);
+        font-family: inherit;
+        transition: border-color .2s, box-shadow .2s;
+        outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(var(--accent-rgb),.12);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn {
+        width: 100%;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        color: #fff;
+        padding: 1rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+        transition: opacity .2s, transform .2s;
+        box-shadow: 0 4px 20px rgba(var(--accent-rgb),.4);
+    }
+    .submit-btn:hover:not(:disabled) { opacity: .9; transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .form-message {
+        margin-top: 1rem;
+        padding: .85rem 1rem;
+        border-radius: 10px;
+        font-size: .9rem;
+        font-weight: 600;
+        display: none;
+        text-align: center;
+    }
+    .form-message.success { background: #d1fae5; color: #065f46; display: block; }
+    .form-message.error   { background: #fee2e2; color: #991b1b; display: block; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+        background: var(--bg2);
+        border-top: 1px solid var(--border);
+        padding: 2.5rem 0;
+        text-align: center;
+    }
+    footer .footer-logo {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    footer .footer-links a {
+        font-size: .88rem;
+        color: var(--muted);
+        transition: color .2s;
+    }
+    footer .footer-links a:hover { color: var(--accent); }
+    footer p { font-size: .82rem; color: var(--muted); }
+
+    /* ============================================================
+       ANIMATIONS (scroll reveal via JS class)
+    ============================================================ */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+        from { opacity: 0; transform: translateX(30px); }
+        to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+        .hero-inner { grid-template-columns: 1fr; text-align: center; }
+        .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
+        .hero-photo { width: 220px; height: 220px; }
+        .hero-actions { justify-content: center; }
+        .hero-socials { justify-content: center; }
+        .hero-stats { justify-content: center; }
+        .about-grid { grid-template-columns: 1fr; }
+        .about-photo { max-width: 280px; margin: 0 auto; }
+        .contact-grid { grid-template-columns: 1fr; }
+        .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .hamburger { display: flex; }
+        .section { padding: 72px 0; }
+        .projects-grid { grid-template-columns: 1fr; }
+        .hero-badge { font-size: .72rem; }
+    }
+    @media (max-width: 480px) {
+        .hero-name { font-size: 2rem; }
+        .contact-form-card { padding: 1.5rem; }
+        .skills-section-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================================================
+       SECTION-SPECIFIC BG ALTERNATION
+    ============================================================ */
+    #hero, #projects, #experience, #contact { background: var(--bg); }
+    #about, #skills { background: var(--bg2); }
+    </style>
 </head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112631399-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-112631399-1');
 </script>
 
 <body>
 
 
-    <header>
-        <div class="loader">
-            <div class="sk-three-bounce">
-                <div class=" sk-child sk-bounce1"></div>
-                <div class=" sk-child sk-bounce2"></div>
-                <div class=" sk-child sk-bounce3"></div>
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav" id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">OyelekeSeun</a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode"></button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-
-        <div id="home" class="header-container">
-            <nav class="animated">
-                <div class="container nav">
-                    <a class="nav-icon" data-scroll href="#home"><img src="img/good.jpg" alt=""></a>
-
-                    <button id="navButton"><span id="navBurger"></span></button>
-                    <ul class="nav-items">
-                        <li><a class='scroll' data-scroll href="#home">Home</a></li>
-                        <li><a class='scroll' data-scroll href="#portfolio">Portfolio</a></li>
-                        <li><a class='scroll' data-scroll href="#skills">Skills</a></li>
-                        <li><a class='scroll' data-scroll href="#about">About Me</a></li>
-                        <li><a class='scroll' data-scroll href="#contact">Contact Me</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="header">
-                <h1 class="animated" data-animation="fadeIn" data-animation-delay="250">Oyeleke Oluseun Emmanuel</h1>
-                <h2 class="animated" data-animation="fadeIn" data-animation-delay="400">Web Developer</h2>
-                <div class="header-btn animated" data-animation="fadeIn" data-animation-delay="450">
-                    <a id="header-btn" data-scroll href="#portfolio">View My Projects</a>
-                </div>
-            </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home"       onclick="closeMobileMenu()">Home</a>
+            <a href="#about"      onclick="closeMobileMenu()">About</a>
+            <a href="#projects"   onclick="closeMobileMenu()">Projects</a>
+            <a href="#skills"     onclick="closeMobileMenu()">Skills</a>
+            <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+            <a href="#contact"    onclick="closeMobileMenu()">Contact</a>
         </div>
-    </header>
+    </div>
+</nav>
 
-    <div id="portfolio" class="section">
-        <div class="section-container">
-            <h1 class="section-h1 animated" data-animation="fadeIn" data-animation-delay="100">My Projects</h1>
-
-            <div id="filter-projects">
-                <button class="btn btn-dark animated" data-filter="all" data-animation="fadeIn" data-animation-delay="200">All</button>
-                <button class="btn btn-outline-dark animated" data-filter="personal" data-animation="fadeIn" data-animation-delay="250">Personal</button>
-                <button class="btn btn-outline-dark animated" data-filter="client" data-animation="fadeIn" data-animation-delay="250">Client Work</button>
-            </div>
-         <div class="portfolio-items">
-                <div class="all personal animated" data-animation="fadeIn" data-animation-delay="150" data-toggle="modal" data-target="#lancer">
-                    <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588440825/undraw_calculator_ddud4g.svg" alt=""style="width:300px;height:200px;"!important>
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero section" id="home">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="container">
+        <div class="hero-inner">
+            <!-- Left content -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Available for opportunities
                 </div>
-                <div class="all personal animated" data-animation="fadeIn" data-animation-delay="150" data-toggle="modal" data-target="#miniclassroom">
-                  <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588439004/miniclassroom_s5cxfs.png" alt=""style="width:300px;height:200px;"!important>
+                <h1 class="hero-name">
+                    Hi, I'm <span>Oyeleke<br>Oluseun</span>
+                </h1>
+                <p class="hero-role">
+                    <span id="typing-text" class="typing-cursor"></span>
+                </p>
+                <p class="hero-bio">
+                    Full-Stack Software Engineer with 5+ years building scalable web applications,
+                    REST APIs and AI-powered tools. Passionate about clean code, great user experiences
+                    and solving real-world problems with technology.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
+                        <i class="fas fa-file-pdf"></i> View CV
+                    </a>
                 </div>
-                <div class="all client animated" data-animation="fadeIn" data-animation-delay="150" data-toggle="modal" data-target="#accounting">
-                    <img src="img/accounting.png" alt=""style="width:300px;height:200px;"!important>
-                  </div>
-                  <div class="all client animated" data-animation="fadeIn" data-animation-delay="150" data-toggle="modal" data-target="#hr">
-                    <img src="img/officematehr.png" alt=""style="width:300px;height:200px;"!important>
-                  </div>
-                  <div class="all client animated" data-animation="fadeIn" data-animation-delay="150" data-toggle="modal" data-target="#craneburg">
-                    <img src="img/craneburg (1).jpeg" alt="" style="width:300px;height:200px;"!important>
-                  </div>
-                
-                <div class="modal fade portfolio-popup" id="lancer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog h-100" role="document">
-                        <div class="modal-content h-100">
-                            <div class="modal-header">
-                                <!-- <div class="modal-title" id="exampleModalLabel"> -->
-                                    <div class="col-xs-12 col-sm-6 col-md-2" id="exampleModalLabel">
-                                        <img src="https://res.cloudinary.com/nxcloud/image/upload/v1570984909/Lancer/Lancers_c40ozr.svg" alt=""
-                                        class="img img-responsive mb-2" height="30" width="auto">
-                                    </div>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                <!-- </div> -->
-                            </div>
-                            <div class="modal-body">
-                                <div class="project-content">
-                                    <div>
-                                        <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588440825/undraw_calculator_ddud4g.svg" alt="Lancers Web App Image" style="width:300px;height:200px;"!important>
-                                    </div>
-                                    <p>Lancers Web App that allows you to use our handy cost estimator to find out how much it will take you to deliver on your project. We take into consideration your work hours, subcontractors, amongst other things, to make sure you always have a healthy profit at the end of the day.</p>
-                                </div>
-                                <div class="project-desc">
-                                    <p>Tools:</p>
-                                    <ul class="project-tools">
-                                        <li>HTML</li>
-                                        <li>CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Bootstrap</li>
-                                        <li>JQuery</li>
-                                        <li>Laravel</li>
-                                        <li>API</li>
-                                    </ul>
-                                    <p>Links:</p>
-                                    <ul class="project-links">
-                                        <li><a href="https://dev.lancers.app" target="_blank">Lancers Site</a></li>
-                                        <li><a href="https://github.com/Oluwablin/lancers" target="_blank">Github</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade portfolio-popup" id="miniclassroom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog h-100" role="document">
-                        <div class="modal-content h-100">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Mini Classroom</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="project-content">
-                                    <div>
-                                        <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588439004/miniclassroom_s5cxfs.png" alt="MiniClassroom Web App Image" style="width:300px;height:200px;"!important>
-                                    </div>
-                                    <p>This is the design and development of a web application for tutors to teach the students virtually, and for students to enrol in various courses they want to learn. </p>
-                                </div>
-                                <div class="project-desc">
-                                    <p>Tools:</p>
-                                    <ul class="project-tools">
-                                        <li>HTML</li>
-                                        <li>CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Jquery</li>
-                                        <li>Bootstrap</li>
-                                        <li>PHP</li>
-                                        <li>Laravel</li>
-                                        <li>MySQL</li>
-                                    </ul>
-                                    <p>Links:</p>
-                                    <ul class="project-links">
-                                        <li><a href="http://206.81.13.104/portal/mini-classroom/" target="_blank">MiniClassroom Site</a></li>
-                                        <li><a href="https://github.com/Oluwablin/Aeolus_MiniClassroom" target="_blank">Github</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade portfolio-popup" id="accounting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog h-100" role="document">
-                        <div class="modal-content h-100">
-                            <div class="modal-header">
-                                <!-- <div class="modal-title" id="exampleModalLabel"> -->
-                                    <div class="col-xs-12 col-sm-6 col-md-2" id="exampleModalLabel">
-                                        <img src="img/accounting_logo.png" alt=""
-                                        class="img img-responsive mb-2" height="30" width="auto">
-                                    </div>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                <!-- </div> -->
-                            </div>
-                            <div class="modal-body">
-                                <div class="project-content">
-                                    <div>
-                                        <img src="img/accounting.png" alt="Officemate Accounting App Image" style="width:300px;height:200px;"!important>
-                                    </div>
-                                    <p>Officemate Accounting App allows you to perform core accounting and bookkeeping tasks including payables and receivables management, petty cash management, investment and ownership management, financial reporting and much more all from your laptops, android and iOS phones.</p>
-                                </div>
-                                <div class="project-desc">
-                                    <p>Tools:</p>
-                                    <ul class="project-tools">
-                                        <li>HTML</li>
-                                        <li>CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Bootstrap</li>
-                                        <li>JQuery</li>
-                                        <li>Laravel</li>
-                                        <li>API</li>
-                                    </ul>
-                                    <p>Links:</p>
-                                    <ul class="project-links">
-                                        <li><a href="https://accounting.officemate.ng/" target="_blank">Officemate Accounting Site</a></li>
-                                        <li><a href="https://github.com/cavideldeveloper/officematedemo" target="_blank">Github</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade portfolio-popup" id="hr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog h-100" role="document">
-                        <div class="modal-content h-100">
-                            <div class="modal-header">
-                                <!-- <div class="modal-title" id="exampleModalLabel"> -->
-                                    <div class="col-xs-12 col-sm-6 col-md-2" id="exampleModalLabel">
-                                        <img src="img/officematehr_logo.png" alt=""
-                                        class="img img-responsive mb-2" height="30" width="auto">
-                                    </div>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                <!-- </div> -->
-                            </div>
-                            <div class="modal-body">
-                                <div class="project-content">
-                                    <div>
-                                        <img src="img/officematehr.png" alt="OfficemateHR Web App Image" style="width:300px;height:200px;"!important>
-                                    </div>
-                                    <p>Officemate HR App helps you to seamlessly manage your people with our all-in-one HR software services which entails the full employment lifecycle, bringing together your onboarding, task management, leave and travel management and a fully integrated payroll system streamlining your HR process through automation.</p>
-                                </div>
-                                <div class="project-desc">
-                                    <p>Tools:</p>
-                                    <ul class="project-tools">
-                                        <li>HTML</li>
-                                        <li>CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Bootstrap</li>
-                                        <li>JQuery</li>
-                                        <li>Laravel</li>
-                                        <li>API</li>
-                                    </ul>
-                                    <p>Links:</p>
-                                    <ul class="project-links">
-                                        <li><a href="https://hr.officemate.ng" target="_blank">OfficemateHR Site</a></li>
-                                        <li><a href="https://github.com/cavideldeveloper/OfficemateHR-api" target="_blank">Github</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade portfolio-popup" id="craneburg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog h-100" role="document">
-                        <div class="modal-content h-100">
-                            <div class="modal-header">
-                                <!-- <div class="modal-title" id="exampleModalLabel"> -->
-                                    <div class="col-xs-12 col-sm-6 col-md-2" id="exampleModalLabel">
-                                        <img src="img/craneburg_logo.svg"alt=""
-                                        class="img img-responsive mb-2" height="30" width="auto">
-                                    </div>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                <!-- </div> -->
-                            </div>
-                            <div class="modal-body">
-                                <div class="project-content">
-                                    <div>
-                                        <img src="img/craneburg (1).jpeg" alt="Craneburg Web App Image">
-                                    </div>
-                                    <p>HR software for Construction Company which helps them to manage their employees attendance sheet, employment request, transfer request, promotion request, termination request and payroll.</p>
-                                </div>
-                                <div class="project-desc">
-                                    <p>Tools:</p>
-                                    <ul class="project-tools">
-                                        <li>HTML</li>
-                                        <li>CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Bootstrap</li>
-                                        <li>JQuery</li>
-                                        <li>Laravel</li>
-                                        <li>API</li>
-                                    </ul>
-                                    <p>Links:</p>
-                                    <ul class="project-links">
-                                        <li><a href="https://dev.lancers.app" target="_blank">Craneburg Site</a></li>
-                                        <li><a href="https://bitbucket.org/sbscphpteam/cranebug_v1/s" target="_blank">Bitbucket</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="hero-social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="hero-social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:oyelekeseun@outlook.com" class="hero-social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://oyelekeseun.vercel.app" target="_blank" rel="noopener" class="hero-social-link" title="Live Site">
+                        <i class="fas fa-globe"></i>
+                    </a>
                 </div>
             </div>
-        </div>
- 
 
-     <div id="about" class="section">
-        <div class="section-container">
-            <h1 class="section-h1 animated" data-animation="fadeIn" data-animation-delay="100">About Me</h1>
-            <div class="about-section">
-                <div class="about-me">
-                    <div class="about-img animated" data-animation="fadeIn" data-animation-delay="200">
-                        <img src="https://res.cloudinary.com/oluwablin/image/upload/v1588438993/me_dweqo7.jpg" alt="" class="img img-responsive mb-12" height="150" width="auto">
+            <!-- Right: photo -->
+            <div class="hero-photo-wrap">
+                <div class="hero-photo-ring"></div>
+                <img
+                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
+                    alt="Oyeleke Oluseun Emmanuel"
+                    class="hero-photo"
+                    onerror="this.src='img/good.jpg'"
+                />
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-num">5+</div>
+                        <div class="stat-lbl">Years Exp.</div>
                     </div>
-                    <div class="about-desc animated" data-animation="fadeIn" data-animation-delay="200">
-                        <p>A Self-taught Web Developer who is extremely passionate and motivated to solve problems that affect lives while building a career in Software Development, and to produce high quality responsive websites that satisfy customer needs. My love for building applications pushes me to improve daily and expand my knowledge of both frontend and backend.</p>
+                    <div class="stat-card">
+                        <div class="stat-num">20+</div>
+                        <div class="stat-lbl">Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-lbl">Technologies</div>
                     </div>
                 </div>
-                <div class="about-skills">
-                    <ul>
-                        <li>
-                            <ul>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Frontend:</strong></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">HTML</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">CSS</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Bootstrap</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Javascript</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Jquery</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Backend:</strong></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">PHP</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">MYSQL</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Laravel</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Wordpress</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">MongoDB</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Version Control:</strong></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Git</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Github</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Design:</strong></li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Photoshop</li>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200">Figma</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li class="animated" data-animation="fadeIn" data-animation-delay="200"><strong>Links:</strong></li>
-                                <li class="animated" id="href" data-animation="fadeIn" data-animation-delay="200"><a href="https://github.com/oluwablin" target="_blank">Github</a></li>
-                                <li class="animated" id="ref" data-animation="fadeIn" data-animation-delay="200"><a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank">LinkedIn</a></li>
-                                <li class="animated" id="ef" data-animation="fadeIn" data-animation-delay="200"><a href="img/oyelekeseun_resume.pdf" download>Resume</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="contact" class="section">
-            <div class="section-container">
-                <h1 class="section-h1 animated" data-animation="fadeIn" data-animation-delay="100">Contact Me</h1>
-
-                <div class="contact-section">
-                    <form action="mail.php" method="post" class="contact-form">
-                        <!-- <?php if (isset($_SESSION['email'])) {
-                            echo "<p class='email-message'>{$_SESSION['email']}</p>";
-                            unset($_SESSION['email']);
-                        } ?>  -->
-                        <p class="animated" data-animation="fadeIn" data-animation-delay="200"><label for="email">Email</label><input type="email" name="email" id="email" placeholder="Email"></p>
-                        <p class="animated" data-animation="fadeIn" data-animation-delay="200"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Subject"></p>
-
-                        <p class="animated" data-animation="fadeIn" data-animation-delay="200"><label for="message">Message</label><textarea name="message" id="message" cols="30" rows="5" placeholder="Message"></textarea>
-                        </p>
-                        <p class="text-center animated" data-animation="fadeIn" data-animation-delay="200"><button type="submit" name="submit" class="submitButton">Submit</button></p>
-                    </form>
             </div>
         </div>
     </div>
-      
-    <!-- My Footer -->
 
-    <footer>
-        <a href="#home" data-scroll class="top animated" data-animation="fadeIn" data-animation-delay="200"><i class="fas fa-angle-double-up"></i></a>
-        <div class="contact-socials">
-            <p class="animated" data-animation="fadeIn" data-animation-delay="200"><a class="d-flex align-center" href="mailto:oyelekeseun@outlook.com"><i class="fas fa-envelope"></i></a></p>
-            <p class="animated" data-animation="fadeIn" data-animation-delay="250"><a class="d-flex align-center" href="https://www.linkedin.com/in/oluseun-oyeleke" target="_blank"><i class="fab fa-linkedin"></i></a></p>
-            <p class="animated" data-animation="fadeIn" data-animation-delay="300"><a class="d-flex align-center" href="https://github.com/oluwablin"><i class="fab fa-github"></i></a></p>
-        </div>;
-        <p class="text-center text-white m-0 animated" data-animation="fadeIn" data-animation-delay="200" style="font-size: 14px;">Oyeleke Oluseun Emmanuel &copy;<?php echo date('Y');?></p>
-    </footer>
+    <div class="scroll-hint">
+        <span>Scroll down</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
-    <!-- Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.appear.js"></script>
-    <!-- jQuery library -->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-		<!-- Popper JS -->
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
-		<!-- Latest compiled JavaScript -->
-		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
-    <script type="" src="js/script.js"></script>
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="reveal-left">
+                <img
+                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
+                    alt="Oyeleke Oluseun Emmanuel"
+                    class="about-photo"
+                    onerror="this.src='img/good.jpg'"
+                />
+            </div>
+            <div class="reveal-right">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Passionate Developer,<br>Lifelong Learner</h2>
+                <div class="about-text">
+                    <p>
+                        I'm a Full-Stack Software Engineer based in the UK, with deep expertise in
+                        PHP &amp; Laravel, Python, React and modern web technologies. I love turning
+                        complex problems into elegant, scalable solutions.
+                    </p>
+                    <p>
+                        Over the past 5+ years I've shipped production-grade HR platforms, accounting
+                        systems, AI-powered tools and REST APIs used by thousands of people. My recent
+                        work includes an AI CV tailoring application built with Python (FastAPI) and
+                        React that uses OpenAI to help candidates land their dream jobs.
+                    </p>
+                    <p>
+                        When I'm not coding, I'm contributing to open-source, mentoring junior
+                        developers, or exploring the latest in AI/ML tooling.
+                    </p>
+                </div>
 
-    <script>
-        $($(document).ready(function () {
-            $("#href").mouseover(function(){
-                $("#href").css("background-color", "black");
-            });
-            $("#href").mouseout(function(){
-                $("#href").css("background-color", "var(--main-color)");
-            });
-            $("#ref").mouseover(function(){
-                $("#ref").css("background-color", "black");
-            });
-            $("#ref").mouseout(function(){
-                $("#ref").css("background-color", "var(--main-color)");
-            });
-            $("#ef").mouseover(function(){
-                $("#ef").css("background-color", "black");
-            });
-            $("#ef").mouseout(function(){
-                $("#ef").css("background-color", "var(--main-color)");
-            });
-        }));
-    </script>
+                <div class="skills-grid">
+                    <div class="skill-cat">
+                        <h4>Frontend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-cat">
+                        <h4>Backend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="skill-cat">
+                        <h4>Databases</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">SQLite</span>
+                        </div>
+                    </div>
+                    <div class="skill-cat">
+                        <h4>DevOps &amp; Tools</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git &amp; GitHub</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">OpenAI API</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-links">
+                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="btn-primary">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="btn-outline">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
+                        <i class="fas fa-file-pdf"></i> View CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="reveal">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-sub">A selection of real-world applications I've designed, built and deployed — from AI-powered tools to enterprise HR platforms.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ai">AI &amp; Python</button>
+            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="client">Client Work</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- 1. AI CV Tailoring Tool -->
+            <div class="project-card featured" data-category="ai personal">
+                <img
+                    src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://ai-cv-tailoring-tool-89cy.vercel.app"
+                    alt="AI CV Tailoring Tool"
+                    class="project-thumb"
+                    onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🤖</div>'"
+                />
+                <div class="project-body">
+                    <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
+                    <span class="project-category">AI · Python · React</span>
+                    <h3 class="project-title">AI CV Tailoring Tool</h3>
+                    <p class="project-desc">
+                        An AI-powered SaaS platform that tailors CVs to specific job descriptions using OpenAI,
+                        with parsing, ATS optimization and downloadable output.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">OpenAI API</span>
+                        <span class="project-tag">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ai-cv-tailoring-tool-89cy.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Oluwablin?tab=repositories" target="_blank" rel="noopener" class="project-link ghost">
+                            <i class="fab fa-github"></i> My GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Volunteer Africa -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://volunteer.africa/" alt="Volunteer Africa" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🌍</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Web Platform</span>
+                    <h3 class="project-title">Volunteer Africa</h3>
+                    <p class="project-desc">Program and content platform with client delivery and production support.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">CakePHP</span>
+                        <span class="project-tag">Client Work</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://volunteer.africa/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. BulkSMSLive -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://www.bulksmslive.com/" alt="BulkSMSLive" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>✉️</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · API Platform</span>
+                    <h3 class="project-title">BulkSMSLive</h3>
+                    <p class="project-desc">Bulk messaging platform with backend API workflows and delivery tooling.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">REST API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.bulksmslive.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Inventory System -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/http://66.70.202.147/inventory/" alt="Inventory System" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>📦</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Internal Tool</span>
+                    <h3 class="project-title">Inventory System</h3>
+                    <p class="project-desc">Inventory application for stock visibility and operational reporting.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://66.70.202.147/inventory/#/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Page Financials -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://pagefinancials.com/" alt="Page Financials" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>💳</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Payroll</span>
+                    <h3 class="project-title">Page Financials</h3>
+                    <p class="project-desc">Payroll and HRMS-focused business platform with backend process automation.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">HRMS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://pagefinancials.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Alumunite -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://alumunite.co/" alt="Alumunite" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🎓</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Education Platform</span>
+                    <h3 class="project-title">Alumunite</h3>
+                    <p class="project-desc">Alumni and education-focused platform with private backend services.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Private Backend</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://alumunite.co/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="https://github.com/Oluwablin/team-alumunite" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Backend (Private)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Nwantas (Erudite) -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://nwantas.com/" alt="Nwantas" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏫</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · School System</span>
+                    <h3 class="project-title">Nwantas (Erudite)</h3>
+                    <p class="project-desc">School management platform backed by private Erudite account and core services.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Private Microservices</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nwantas.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        <a href="https://github.com/Oluwablin/erudite-account-service" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Account Service</a>
+                        <a href="https://github.com/Oluwablin/erudite-core-service" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Core Service</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. StagingDC -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://stagingdc.com/" alt="StagingDC" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · Full-Stack</span>
+                    <h3 class="project-title">StagingDC</h3>
+                    <p class="project-desc">Public-facing platform with full-stack architecture and maintenance support.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://stagingdc.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Craneburg ERP -->
+            <div class="project-card" data-category="fullstack client">
+                <img src="https://image.thum.io/get/width/1200/crop/700/noanimate/https://craneburg.vercel.app/" alt="Craneburg ERP" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏗️</div>'" />
+                <div class="project-body">
+                    <span class="project-category">Client Work · ERP</span>
+                    <h3 class="project-title">Craneburg ERP</h3>
+                    <p class="project-desc">Enterprise suite covering HR, payroll and project operations.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://craneburg.vercel.app/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. KPI -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb-placeholder">📈</div>
+                <div class="project-body">
+                    <span class="project-category">Personal · Full-Stack</span>
+                    <h3 class="project-title">KPI Performance Review App</h3>
+                    <p class="project-desc">Performance review and KPI tracking application.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Oluwablin/KPI" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Law CRM -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb-placeholder">⚖️</div>
+                <div class="project-body">
+                    <span class="project-category">Personal · CRM</span>
+                    <h3 class="project-title">Law CRM</h3>
+                    <p class="project-desc">CRM platform built for law firms with customer and case workflow management.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">CRM</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Oluwablin/law-crm" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Wallet System -->
+            <div class="project-card" data-category="personal fullstack">
+                <div class="project-thumb-placeholder">💼</div>
+                <div class="project-body">
+                    <span class="project-category">Personal · Fintech</span>
+                    <h3 class="project-title">Wallet System</h3>
+                    <p class="project-desc">Wallet and payment integration project built with Paystack workflow support.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Laravel</span>
+                        <span class="project-tag">Paystack</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Oluwablin/wallet-system" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Blog RSS -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb-placeholder">📰</div>
+                <div class="project-body">
+                    <span class="project-category">Personal · Node.js</span>
+                    <h3 class="project-title">Blog RSS Aggregator</h3>
+                    <p class="project-desc">Personal feed aggregator that checks subscribed RSS sources for updates.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">RSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Oluwablin/blog" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Portfolio Website -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb-placeholder">🧑‍💻</div>
+                <div class="project-body">
+                    <span class="project-category">Personal · Frontend</span>
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-desc">This portfolio site source code and deployment setup.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Oluwablin/myportfolio.github.io" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /projects-grid -->
+    </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+============================================================ -->
+<section class="section" id="skills">
+    <div class="container">
+        <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+            <span class="section-label">Tech Stack</span>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+        </div>
+
+        <div class="skills-section-grid reveal">
+            <div class="skill-block"><i class="fab fa-php"></i><div class="skill-block-name">PHP</div><div class="skill-block-level">Expert</div></div>
+            <div class="skill-block"><i class="fab fa-laravel"></i><div class="skill-block-name">Laravel</div><div class="skill-block-level">Expert</div></div>
+            <div class="skill-block"><i class="fab fa-python"></i><div class="skill-block-name">Python</div><div class="skill-block-level">Advanced</div></div>
+            <div class="skill-block"><i class="fab fa-react"></i><div class="skill-block-name">React</div><div class="skill-block-level">Advanced</div></div>
+            <div class="skill-block"><i class="fab fa-js-square"></i><div class="skill-block-name">JavaScript</div><div class="skill-block-level">Expert</div></div>
+            <div class="skill-block"><i class="fab fa-node-js"></i><div class="skill-block-name">Node.js</div><div class="skill-block-level">Intermediate</div></div>
+            <div class="skill-block"><i class="fas fa-database"></i><div class="skill-block-name">MySQL</div><div class="skill-block-level">Expert</div></div>
+            <div class="skill-block"><i class="fas fa-leaf"></i><div class="skill-block-name">MongoDB</div><div class="skill-block-level">Intermediate</div></div>
+            <div class="skill-block"><i class="fab fa-docker"></i><div class="skill-block-name">Docker</div><div class="skill-block-level">Intermediate</div></div>
+            <div class="skill-block"><i class="fab fa-git-alt"></i><div class="skill-block-name">Git</div><div class="skill-block-level">Expert</div></div>
+            <div class="skill-block"><i class="fas fa-robot"></i><div class="skill-block-name">OpenAI API</div><div class="skill-block-level">Advanced</div></div>
+            <div class="skill-block"><i class="fab fa-figma"></i><div class="skill-block-name">Figma</div><div class="skill-block-level">Intermediate</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="reveal">
+            <span class="section-label">Career</span>
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-sub">A track record of building production systems across fintech, HR, education and AI industries.</p>
+        </div>
+
+        <div class="timeline reveal">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 – Present &nbsp;|&nbsp; UK</div>
+                <div class="timeline-role">Full-Stack Developer &amp; AI Engineer</div>
+                <div class="timeline-company">AI CV Tailoring Tool &mdash; Personal / Freelance (UK)</div>
+                <ul class="timeline-desc">
+                    <li>Built an AI-powered SaaS CV tailoring application using Python (FastAPI) and React, deployed on Vercel.</li>
+                    <li>Integrated OpenAI GPT models to analyse CVs and job descriptions, generating ATS-optimised tailored CVs.</li>
+                    <li>Implemented PDF/DOCX parsing, PDF generation, SendGrid email notifications and async task queuing.</li>
+                    <li>Designed responsive React frontend with dark/light mode, multi-step UX and real-time CV preview.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sep 2022 – Present</div>
+                <div class="timeline-role">Senior Backend Engineer</div>
+                <div class="timeline-company">Fullware Solutions Limited — Lagos, Nigeria</div>
+                <ul class="timeline-desc">
+                    <li>Designed and deployed secure RESTful APIs for fintech and e-commerce solutions serving thousands of users daily.</li>
+                    <li>Integrated multiple payment gateways (Stripe, Paystack, Flutterwave, Interswitch) ensuring reliable transaction flows.</li>
+                    <li>Improved API response times through advanced query optimisation and Redis caching strategies.</li>
+                    <li>Mentored junior developers and established coding best practices adopted team-wide.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sep 2021 – May 2022</div>
+                <div class="timeline-role">Backend Engineer</div>
+                <div class="timeline-company">Page Financials (Forsterfields &amp; Griffins) — Lagos, Nigeria</div>
+                <ul class="timeline-desc">
+                    <li>Built and maintained backend services for HRMS Payroll and the Fintech in a Box product.</li>
+                    <li>Enhanced application reliability with database optimisation and server-side caching.</li>
+                    <li>Delivered features within agile sprint cycles in close collaboration with Product Management.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Mar 2020 – Oct 2021</div>
+                <div class="timeline-role">Software Developer</div>
+                <div class="timeline-company">Cavidel Limited (Officemate) &amp; SBSC — Lagos, Nigeria</div>
+                <ul class="timeline-desc">
+                    <li>Developed Officemate HR, Accounting, and Hospital Management applications with RESTful APIs.</li>
+                    <li>Built enterprise APIs and Azure-hosted solutions at SBSC, writing complex SQL and stored procedures.</li>
+                    <li>Delivered the Craneburg ERP system (payroll, HR, project management) ahead of schedule.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2019 – Feb 2020</div>
+                <div class="timeline-role">Backend Developer</div>
+                <div class="timeline-company">Phosmobile Digital Solutions — Lagos, Nigeria</div>
+                <ul class="timeline-desc">
+                    <li>Built APIs for loan management and disbursement platforms using Laravel and GraphQL.</li>
+                    <li>Partnered with frontend teams (Vue.js) to deliver seamless e-commerce and fintech experiences.</li>
+                    <li>HNG Tech Internship (2018): contributed to web applications using PHP, Laravel and Git.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 3rem;">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-sub" style="margin:0 auto;">
+                Whether you have a project in mind, a job opportunity, or just want to say hi —
+                my inbox is always open.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Info -->
+            <div class="reveal-left">
+                <h3>Contact Information</h3>
+                <p>I respond to all enquiries within 24 hours. You can also find me on LinkedIn and GitHub.</p>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:oyelekeseun@outlook.com">oyelekeseun@outlook.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>United Kingdom</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://oyelekeseun.vercel.app" target="_blank" rel="noopener">oyelekeseun.vercel.app</a>
+                </div>
+
+                <div class="contact-socials-row">
+                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:oyelekeseun@outlook.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/oyelekeseun" target="_blank" rel="noopener" class="social-btn" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="reveal-right">
+                <div class="contact-form-card">
+                    <!--
+                        Contact form uses a secure backend endpoint.
+                        Do not store private credentials in this HTML file.
+                    -->
+                    <form id="contactForm">
+                        <input type="text" name="website" id="cf-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-name">Full Name *</label>
+                                <input type="text" id="cf-name" name="from_name" placeholder="John Smith" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-email">Email *</label>
+                                <input type="email" id="cf-email" name="from_email" placeholder="john@example.com" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-subject">Subject *</label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="Project Enquiry" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-message">Message *</label>
+                            <textarea id="cf-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+    <div class="container">
+        <a href="#home" class="footer-logo">OyelekeSeun</a>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>Oyeleke Oluseun Emmanuel &copy; <span id="year"></span> &mdash; Built with care in the UK.</p>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<a href="#home" id="backToTop" style="
+    position:fixed; bottom:2rem; right:2rem;
+    width:44px; height:44px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff; border-radius:50%;
+    display:none; align-items:center; justify-content:center;
+    font-size:1.1rem; box-shadow:var(--shadow-lg);
+    transition:opacity .3s, transform .3s;
+    z-index:999;
+" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+// ── Theme ──────────────────────────────────────────────────────
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+
+function applyTheme(dark) {
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+}
+
+// Detect preference: saved → system → default light
+const saved = localStorage.getItem('portfolio-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(saved ? saved === 'dark' : prefersDark);
+
+themeBtn.addEventListener('click', () => {
+    applyTheme(html.getAttribute('data-theme') !== 'dark');
+});
+
+// ── Hamburger ──────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+});
+
+function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+}
+
+// ── Typing animation ───────────────────────────────────────────
+const roles = [
+    'Senior Backend Engineer',
+    'Laravel & PHP Specialist',
+    'Python & AI Developer',
+    'Full-Stack Architect',
+    'OpenAI & SaaS Builder',
+];
+let roleIndex = 0, charIndex = 0, deleting = false;
+const typingEl = document.getElementById('typing-text');
+
+function typeRole() {
+    const current = roles[roleIndex];
+    if (!deleting) {
+        typingEl.textContent = current.slice(0, ++charIndex);
+        if (charIndex === current.length) {
+            deleting = true;
+            setTimeout(typeRole, 2200);
+            return;
+        }
+    } else {
+        typingEl.textContent = current.slice(0, --charIndex);
+        if (charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+    setTimeout(typeRole, deleting ? 55 : 95);
+}
+typeRole();
+
+// ── Scroll reveal ──────────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// Stagger project cards
+document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.07) + 's';
+    observer.observe(card);
+    card.classList.add('reveal');
+});
+
+// ── Project filter ─────────────────────────────────────────────
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+            const cats = card.dataset.category || '';
+            const match = filter === 'all' || cats.includes(filter);
+            card.style.display = match ? 'flex' : 'none';
+        });
+    });
+});
+
+// Make project media open each card's primary link
+projectCards.forEach(card => {
+    const media = card.querySelector('.project-thumb, .project-thumb-placeholder');
+    const primaryLink = card.querySelector('.project-links .project-link');
+    if (!media || !primaryLink) return;
+
+    const openPrimaryLink = () => {
+        window.open(primaryLink.href, '_blank', 'noopener');
+    };
+
+    media.style.cursor = 'pointer';
+    media.setAttribute('role', 'link');
+    media.setAttribute('tabindex', '0');
+    media.addEventListener('click', openPrimaryLink);
+    media.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openPrimaryLink();
+        }
+    });
+});
+
+// ── Back to top ────────────────────────────────────────────────
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+});
+
+// ── Year ───────────────────────────────────────────────────────
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── Contact Form (secure backend endpoint) ─────────────────────
+const CONTACT_API_URL =
+    (window.PORTFOLIO_CONFIG && window.PORTFOLIO_CONFIG.contactApiUrl)
+    || (window.location.hostname.includes('github.io')
+        ? 'https://oyelekeseun.vercel.app/api/contact'
+        : '/api/contact');
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMessage');
+    msg.className = 'form-message';
+    msg.style.display = 'none';
+
+    // Basic validation
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const website = document.getElementById('cf-website').value.trim();
+
+    if (!name || !email || !subject || !message) {
+        msg.textContent = 'Please fill in all fields.';
+        msg.className = 'form-message error';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+    try {
+        const response = await fetch(CONTACT_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                subject,
+                message,
+                website
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Could not send message');
+        }
+
+        msg.textContent = '✅ Message sent! I\'ll get back to you within 24 hours.';
+        msg.className = 'form-message success';
+        this.reset();
+    } catch (err) {
+        // Fallback: open mailto link so the message is never lost
+        const mailto = `mailto:oyelekeseun@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\n\n' + message)}`;
+        msg.innerHTML = '⚠️ Could not send automatically. <a href="' + mailto + '" style="color:inherit;font-weight:700;">Click here to email directly</a>.';
+        msg.className = 'form-message error';
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    }
+});
+
+// ── Active nav on scroll ───────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+            ? 'var(--accent)' : '';
+    });
+});
+</script>
 
 </body>
-
 </html>
