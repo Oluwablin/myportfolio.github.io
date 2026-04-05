@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oluseun Oyeleke — Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            color: #1e293b;
+            background: #f8fafc;
+            line-height: 1.5;
+        }
+        .page {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,.08);
+        }
+        /* Header */
+        .cv-header { margin-bottom: 1.5rem; border-bottom: 2px solid #6366f1; padding-bottom: 1rem; }
+        .cv-name { font-size: 22pt; font-weight: 700; color: #1e293b; letter-spacing: -.3px; }
+        .cv-title { font-size: 11pt; color: #6366f1; font-weight: 600; margin: .25rem 0 .5rem; }
+        .cv-contacts { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: 9pt; color: #475569; }
+        .cv-contacts a { color: #6366f1; text-decoration: none; }
+        /* Section */
+        .cv-section { margin: 1.2rem 0; }
+        .cv-section-title {
+            font-size: 9.5pt; font-weight: 700; letter-spacing: .08em;
+            text-transform: uppercase; color: #6366f1;
+            border-bottom: 1px solid #e2e8f0; padding-bottom: .3rem; margin-bottom: .75rem;
+        }
+        /* Summary */
+        .cv-summary { color: #334155; font-size: 9.5pt; line-height: 1.6; }
+        /* Skills */
+        .cv-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; }
+        .cv-skill-row { display: flex; gap: .5rem; font-size: 9pt; }
+        .cv-skill-label { font-weight: 600; color: #334155; min-width: 140px; flex-shrink: 0; }
+        .cv-skill-val { color: #475569; }
+        /* Experience */
+        .cv-job { margin-bottom: 1.1rem; }
+        .cv-job-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .cv-job-title { font-weight: 700; font-size: 10.5pt; color: #1e293b; }
+        .cv-job-date { font-size: 8.5pt; color: #6366f1; font-weight: 600; }
+        .cv-job-company { font-size: 9.5pt; color: #475569; margin-bottom: .4rem; }
+        .cv-job-bullets { padding-left: 1rem; }
+        .cv-job-bullets li { font-size: 9pt; color: #334155; margin-bottom: .2rem; list-style: disc; }
+        .cv-job-skills { font-size: 8.5pt; color: #64748b; margin-top: .3rem; }
+        .cv-job-skills strong { color: #475569; }
+        /* Education / Projects */
+        .cv-edu { font-size: 9.5pt; color: #334155; }
+        .cv-edu strong { color: #1e293b; }
+        .cv-project-item { margin-bottom: .4rem; font-size: 9pt; color: #334155; }
+        .cv-project-item strong { color: #1e293b; }
+        /* Print */
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; margin: 0; padding: 1.5cm 2cm; max-width: 100%; }
+            .no-print { display: none !important; }
+        }
+        /* Print button */
+        .print-bar {
+            position: fixed; top: 1rem; right: 1rem;
+            display: flex; gap: .5rem; z-index: 100;
+        }
+        .print-btn {
+            background: #6366f1; color: #fff; border: none; cursor: pointer;
+            padding: .6rem 1.25rem; border-radius: 8px; font-size: .88rem; font-weight: 600;
+            font-family: inherit; transition: opacity .2s;
+        }
+        .print-btn:hover { opacity: .85; }
+        .back-btn {
+            background: #1e293b; color: #fff; border: none; cursor: pointer;
+            padding: .6rem 1.25rem; border-radius: 8px; font-size: .88rem; font-weight: 600;
+            font-family: inherit; transition: opacity .2s; text-decoration: none;
+            display: inline-flex; align-items: center;
+        }
+        .back-btn:hover { opacity: .85; }
+        /* Featured label */
+        .new-badge {
+            display: inline-block;
+            background: #6366f1; color: #fff;
+            font-size: 7pt; font-weight: 700; text-transform: uppercase;
+            letter-spacing: .06em; padding: 1px 6px; border-radius: 4px;
+            vertical-align: middle; margin-left: .4rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+    <a href="index.html" class="back-btn">← Portfolio</a>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="page">
+
+    <!-- ── HEADER ──────────────────────────────────────────────── -->
+    <div class="cv-header">
+        <div class="cv-name">Oluseun Oyeleke</div>
+        <div class="cv-title">Senior Full-Stack Engineer &amp; AI Developer</div>
+        <div class="cv-contacts">
+            <span>United Kingdom</span>
+            <span>+44 7778 151558</span>
+            <a href="mailto:oyelekeseun@outlook.com">oyelekeseun@outlook.com</a>
+            <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Oluwablin" target="_blank">GitHub</a>
+            <a href="https://oyelekeseun.vercel.app" target="_blank">Portfolio</a>
+        </div>
+    </div>
+
+    <!-- ── PROFESSIONAL SUMMARY ───────────────────────────────── -->
+    <div class="cv-section">
+        <div class="cv-section-title">Professional Summary</div>
+        <p class="cv-summary">
+            Full-Stack Software Engineer with 6+ years' experience designing, developing and maintaining scalable
+            applications across fintech, healthcare, AI, and enterprise solutions. Strong expertise in PHP, Laravel,
+            Python, React and API integrations, with recent hands-on experience building AI-powered SaaS tools using
+            OpenAI. Proven track record of delivering robust systems, improving performance and collaborating within
+            agile teams to meet business goals.
+        </p>
+    </div>
+
+    <!-- ── CORE SKILLS ────────────────────────────────────────── -->
+    <div class="cv-section">
+        <div class="cv-section-title">Core Skills</div>
+        <div class="cv-skills-grid">
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">Languages &amp; Frameworks:</span>
+                <span class="cv-skill-val">PHP, Laravel, Python, FastAPI, JavaScript, React, Vue.js, Node.js</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">Databases:</span>
+                <span class="cv-skill-val">MySQL, PostgreSQL, MongoDB, SQL Server, Redis</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">APIs &amp; Integrations:</span>
+                <span class="cv-skill-val">RESTful APIs, GraphQL, OpenAI API, SendGrid, Stripe, Paystack, Flutterwave</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">DevOps &amp; Cloud:</span>
+                <span class="cv-skill-val">Docker, CI/CD, Vercel, Azure, Apache, Nginx, GitHub Actions</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">Testing &amp; Docs:</span>
+                <span class="cv-skill-val">PHPUnit, Postman, Swagger/OpenAPI, Pytest</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">Security &amp; Auth:</span>
+                <span class="cv-skill-val">HTTPS, JWT, OAuth 2.0, Data Encryption</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">AI / ML Tooling:</span>
+                <span class="cv-skill-val">OpenAI GPT-4, Prompt Engineering, PDF/DOCX Processing, ATS Optimisation</span>
+            </div>
+            <div class="cv-skill-row">
+                <span class="cv-skill-label">Collaboration:</span>
+                <span class="cv-skill-val">Git, GitHub, GitLab, Bitbucket, Jira, Trello, Agile/Scrum</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PROFESSIONAL EXPERIENCE ───────────────────────────── -->
+    <div class="cv-section">
+        <div class="cv-section-title">Professional Experience</div>
+
+        <!-- NEW: AI CV Tailoring Tool -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Full-Stack Developer &amp; AI Engineer <span class="new-badge">New</span></span>
+                <span class="cv-job-date">2024 – Present</span>
+            </div>
+            <div class="cv-job-company">AI CV Tailoring Tool — Personal / Freelance, United Kingdom</div>
+            <ul class="cv-job-bullets">
+                <li>Designed and built an AI-powered SaaS CV tailoring application from scratch using Python (FastAPI) and React, deployed on Vercel.</li>
+                <li>Integrated OpenAI GPT-4 to intelligently analyse CVs and job descriptions, generating ATS-optimised, keyword-aligned tailored CVs in real time.</li>
+                <li>Built a Python PDF/DOCX parsing pipeline using pdfplumber and python-docx, with async PDF generation via WeasyPrint.</li>
+                <li>Implemented robust email notification system using SendGrid HTTP API with retry logic and async threading.</li>
+                <li>Created a responsive React frontend with light/dark mode, multi-step UX, real-time CV preview and download functionality.</li>
+                <li>Deployed the full-stack application on Vercel with environment variable management and custom API routing (vercel.json).</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> Python, FastAPI, React, OpenAI API, SendGrid, WeasyPrint, pdfplumber, Vercel, Docker</p>
+        </div>
+
+        <!-- Fullware Solutions -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Senior Backend Engineer</span>
+                <span class="cv-job-date">Sep 2022 – Present</span>
+            </div>
+            <div class="cv-job-company">Fullware Solutions Limited, Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Designed and deployed secure RESTful APIs for fintech and e-commerce solutions.</li>
+                <li>Integrated multiple payment gateways (Stripe, Paystack, Flutterwave, Interswitch), ensuring seamless transaction flows.</li>
+                <li>Improved API performance through query optimisation and caching strategies.</li>
+                <li>Established secure HTTPS protocols for client–server communication.</li>
+                <li>Mentored junior developers and introduced coding best practices, improving team productivity.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, MySQL, RESTful APIs, Payment Gateway Integrations, Docker, Redis, Git, Postman, Swagger, Agile</p>
+        </div>
+
+        <!-- Page Financials -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Backend Engineer</span>
+                <span class="cv-job-date">Sep 2021 – May 2022</span>
+            </div>
+            <div class="cv-job-company">Page Financials (Forsterfields &amp; Griffins Technology Ltd), Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Built and maintained backend services for HRMS Payroll and Fintech in a Box solutions.</li>
+                <li>Enhanced application reliability through database optimisation and server-side caching.</li>
+                <li>Delivered new features in collaboration with Product Managers within agile sprints.</li>
+                <li>Ensured security compliance by implementing regular patches and encryption standards.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, MySQL, API Integrations, Redis, CI/CD, HTTPS, GitLab, Jira</p>
+        </div>
+
+        <!-- SBSC -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Software Engineer</span>
+                <span class="cv-job-date">Jan 2021 – Oct 2021</span>
+            </div>
+            <div class="cv-job-company">Software Business Solutions &amp; Consulting (SBSC), Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Developed robust APIs for enterprise and client-facing applications.</li>
+                <li>Supported deployed applications by troubleshooting and resolving end-user issues.</li>
+                <li>Wrote complex SQL queries and stored procedures for efficient data retrieval.</li>
+                <li>Contributed to cloud-hosted solutions leveraging Azure.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, SQL Server, Azure, Git, Agile, API Documentation, Postman</p>
+        </div>
+
+        <!-- Cavidel -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Software Developer</span>
+                <span class="cv-job-date">Mar 2020 – Mar 2021</span>
+            </div>
+            <div class="cv-job-company">Cavidel Limited, Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Developed Officemate HR, Accounting, and Hospital applications, integrating them with secure RESTful APIs.</li>
+                <li>Refactored legacy systems into modern architectures, reducing maintenance costs.</li>
+                <li>Collaborated with project managers to deliver major features ahead of deadlines.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, MySQL, RESTful APIs, Git, Microservices, Agile/Scrum</p>
+        </div>
+
+        <!-- Phosmobile -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Backend Developer</span>
+                <span class="cv-job-date">Jan 2019 – Feb 2020</span>
+            </div>
+            <div class="cv-job-company">Phosmobile Digital Solutions, Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Built APIs for loan management and disbursement platforms using Laravel and GraphQL.</li>
+                <li>Partnered with frontend developers (Vue.js) to deliver seamless user experiences.</li>
+                <li>Designed backend solutions to support secure and efficient e-commerce capabilities.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, GraphQL, MySQL, Vue.js, Git, JWT Authentication</p>
+        </div>
+
+        <!-- HNG Intern -->
+        <div class="cv-job">
+            <div class="cv-job-header">
+                <span class="cv-job-title">Web Developer Intern</span>
+                <span class="cv-job-date">Sep 2018 – Dec 2018</span>
+            </div>
+            <div class="cv-job-company">HNG Tech, Lagos</div>
+            <ul class="cv-job-bullets">
+                <li>Assisted in building and maintaining web applications with HTML, CSS, PHP, and Laravel.</li>
+                <li>Implemented user requirements into functional prototypes.</li>
+            </ul>
+            <p class="cv-job-skills"><strong>Skills:</strong> PHP, Laravel, HTML, CSS, JavaScript, Git</p>
+        </div>
+    </div>
+
+    <!-- ── EDUCATION ──────────────────────────────────────────── -->
+    <div class="cv-section">
+        <div class="cv-section-title">Education</div>
+        <p class="cv-edu">
+            <strong>B.Sc. Industrial Chemistry</strong> &mdash;
+            Obafemi Awolowo University, Ile-Ife, Nigeria &mdash; Aug 2017
+        </p>
+    </div>
+
+    <!-- ── NOTABLE PROJECTS ───────────────────────────────────── -->
+    <div class="cv-section">
+        <div class="cv-section-title">Notable Projects</div>
+        <div class="cv-project-item"><strong>AI CV Tailoring Tool (2024, UK) <span class="new-badge">New</span>:</strong> Full-stack AI SaaS tool (Python FastAPI + React + OpenAI) — <a href="https://ai-cv-tailoring-tool-89cy.vercel.app/" target="_blank">ai-cv-tailoring-tool-89cy.vercel.app</a></div>
+        <div class="cv-project-item"><strong>Volunteers Program for Africa (2023):</strong> New features with PHP &amp; CakePHP — volunteer.africa</div>
+        <div class="cv-project-item"><strong>African Commission on Human &amp; People's Rights (2023):</strong> Full-stack architecture &amp; DB schema in PHP/JS — stagingdc.com</div>
+        <div class="cv-project-item"><strong>Ogarecharge.com (2022):</strong> APIs in Laravel &amp; MySQL; integrated payment gateways</div>
+        <div class="cv-project-item"><strong>SMSVend (2022):</strong> SMS service APIs built with Laravel &amp; MySQL — smsvend.com</div>
+        <div class="cv-project-item"><strong>Craneburg ERP (2021):</strong> Payroll, HR, and project APIs delivered ahead of schedule — craneburg.vercel.app</div>
+        <div class="cv-project-item"><strong>Officemate HR &amp; Accounting (2020–2021):</strong> HR and accounting platforms with Laravel — erp.offcemate.ng</div>
+    </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
