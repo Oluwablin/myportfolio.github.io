@@ -1,1962 +1,756 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Oyeleke Oluseun | Full-Stack Developer</title>
-    <meta name="description" content="Oyeleke Oluseun Emmanuel — Full-Stack Software Engineer specialising in Laravel, Python, React and AI-powered web applications." />
-    <meta name="keywords" content="Oyeleke Oluseun, Full Stack Developer, Laravel, PHP, Python, React, Software Engineer, Nigeria, UK" />
-    <meta property="og:title" content="Oyeleke Oluseun | Full-Stack Developer" />
-    <meta property="og:description" content="Full-Stack Software Engineer building beautiful, scalable web applications." />
-    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
-    <meta name="twitter:image" content="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4" />
-    <meta name="twitter:card" content="summary_large_image" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oluseun Oyeleke — Backend Engineer</title>
+<meta name="description" content="Oluseun Oyeleke — backend software engineer specialising in payments APIs, fintech systems and applied AI. PHP/Laravel, Python/FastAPI, React. Based in Greater Manchester, UK." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B1220'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' fill='%233E7CD6' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --paper:#F6F4EE;
+  --surface:#FFFFFF;
+  --surface-sunk:#ECE8DD;
+  --ink:#14181C;
+  --ink-soft:#4B535A;
+  --ink-faint:#7C848B;
+  --rule:#D9D2C2;
+  --rule-soft:#E6E1D3;
+  --accent:#1E4B8C;
+  --accent-ink:#123061;
+  --accent-soft:#E2EAF6;
+  --copper:#B5601F;
+  --copper-soft:#F5E7D8;
+  --shadow:0 1px 2px rgba(20,24,28,.05),0 10px 28px rgba(20,24,28,.07);
+  --shadow-lg:0 20px 48px rgba(20,24,28,.14);
+  --radius:10px;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --paper:#0B0F14;
+  --surface:#12171D;
+  --surface-sunk:#171D24;
+  --ink:#E9E7DE;
+  --ink-soft:#A8AFB6;
+  --ink-faint:#6D757D;
+  --rule:#262D35;
+  --rule-soft:#1D242B;
+  --accent:#5C93E0;
+  --accent-ink:#BFD6F5;
+  --accent-soft:#152238;
+  --copper:#E0954A;
+  --copper-soft:#2B2013;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.4);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B0F14; --surface:#12171D; --surface-sunk:#171D24;
+    --ink:#E9E7DE; --ink-soft:#A8AFB6; --ink-faint:#6D757D;
+    --rule:#262D35; --rule-soft:#1D242B;
+    --accent:#5C93E0; --accent-ink:#BFD6F5; --accent-soft:#152238;
+    --copper:#E0954A; --copper-soft:#2B2013;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.4);
+    --shadow-lg:0 24px 60px rgba(0,0,0,.55);
+    color-scheme:dark;
+  }
+}
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/oluwablin/image/upload/v1588439022/my_logo_iyufqd.jpg" />
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  transition:background .3s ease,color .3s ease;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit;}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--paper);}
+::-webkit-scrollbar-thumb{background:var(--rule);border-radius:4px;}
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;}
+.label{
+  font-family:'IBM Plex Mono',monospace; text-transform:uppercase;
+  letter-spacing:.14em; font-size:11.5px; font-weight:600; color:var(--accent);
+}
+.container{max-width:1120px;margin:0 auto;padding:0 28px;}
+.section{padding:112px 0;border-top:1px solid var(--rule-soft);}
+.section:first-of-type{border-top:none;}
+.section-head{max-width:640px;margin-bottom:52px;}
+.section-num{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);
+  display:block;margin-bottom:10px;
+}
+.section-title{
+  font-family:'IBM Plex Mono',monospace; font-weight:700;
+  font-size:clamp(1.7rem,3.4vw,2.5rem); letter-spacing:-.01em;
+  line-height:1.15; text-wrap:balance; margin-bottom:14px;
+}
+.section-sub{color:var(--ink-soft);font-size:1.03rem;max-width:56ch;}
 
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
 
-    <!-- Runtime config (non-secret values only) -->
-    <script src="js/site-config.js"></script>
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule-soft);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1.05rem;letter-spacing:-.02em;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{
+  font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--ink-soft);
+  position:relative;padding:4px 0;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s;
+}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.theme-toggle{
+  width:42px;height:23px;border:1px solid var(--rule);border-radius:999px;
+  position:relative;background:var(--surface-sunk);flex-shrink:0;
+}
+.theme-toggle::after{
+  content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;
+  background:var(--accent);transition:transform .25s ease;
+}
+[data-theme="dark"] .theme-toggle::after{transform:translateX(19px);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;
+  padding:11px 20px;border-radius:6px;border:1px solid transparent;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.btn-ghost{border-color:var(--rule);color:var(--ink);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;background:var(--paper);border-top:1px solid var(--rule-soft);padding:8px 28px 18px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'IBM Plex Mono',monospace;padding:12px 0;border-bottom:1px solid var(--rule-soft);font-size:.88rem;}
 
-    <style>
-    /* ============================================================
-       THEME VARIABLES
-    ============================================================ */
-    :root {
-        --bg:         #ffffff;
-        --bg2:        #f1f5f9;
-        --card:       #ffffff;
-        --border:     #e2e8f0;
-        --text:       #1e293b;
-        --muted:      #64748b;
-        --accent:     #6366f1;
-        --accent2:    #8b5cf6;
-        --accent-rgb: 99,102,241;
-        --btn-text:   #ffffff;
-        --nav-bg:     rgba(255,255,255,0.85);
-        --shadow:     0 4px 24px rgba(99,102,241,.10);
-        --shadow-lg:  0 10px 40px rgba(99,102,241,.18);
-        --tag-bg:     #ede9fe;
-        --tag-text:   #6366f1;
-        --hero-text:  #1e293b;
-    }
-    [data-theme="dark"] {
-        --bg:         #0f172a;
-        --bg2:        #1e293b;
-        --card:       #1e293b;
-        --border:     #334155;
-        --text:       #f1f5f9;
-        --muted:      #94a3b8;
-        --accent:     #818cf8;
-        --accent2:    #a78bfa;
-        --accent-rgb: 129,140,248;
-        --btn-text:   #0f172a;
-        --nav-bg:     rgba(15,23,42,0.90);
-        --shadow:     0 4px 24px rgba(0,0,0,.35);
-        --shadow-lg:  0 10px 40px rgba(0,0,0,.50);
-        --tag-bg:     #312e81;
-        --tag-text:   #a5b4fc;
-        --hero-text:  #f1f5f9;
-    }
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  padding-top:64px;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:
+    linear-gradient(var(--rule-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule-soft) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 80%);
+}
+.hero-inner{position:relative;z-index:1;width:100%;padding:48px 0 64px;}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:999px;padding:6px 14px 6px 10px;
+  margin-bottom:28px;background:var(--surface);
+}
+.dot-live{width:7px;height:7px;border-radius:50%;background:#3E9B5C;flex-shrink:0;position:relative;}
+.dot-live::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:#3E9B5C;opacity:.35;animation:pulse 2s ease-out infinite;}
+@keyframes pulse{0%{transform:scale(.6);opacity:.5;}100%{transform:scale(2.2);opacity:0;}}
+.hero-prompt{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:1rem;margin-bottom:10px;}
+.hero-prompt .cursor{display:inline-block;width:9px;height:1.1em;background:var(--accent);vertical-align:-3px;animation:blink 1.1s step-end infinite;margin-left:2px;}
+@keyframes blink{50%{opacity:0;}}
+.hero h1{
+  font-family:'IBM Plex Mono',monospace;font-weight:700;
+  font-size:clamp(2.4rem,7.2vw,5rem); line-height:1.03; letter-spacing:-.02em;
+  text-wrap:balance; margin-bottom:22px;
+}
+.hero h1 .accent{color:var(--accent);}
+.hero-lede{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-soft);max-width:56ch;margin-bottom:34px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:0;max-width:fit-content;border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
+.hero-stat{padding:16px 28px;border-right:1px solid var(--rule);}
+.hero-stat:last-child{border-right:none;}
+.hero-stat b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.5rem;color:var(--accent);}
+.hero-stat span{font-size:.78rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;}
 
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-        font-family: 'Inter', sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        transition: background .35s ease, color .35s ease;
-        overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    ul { list-style: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start;}
+.about-copy p{color:var(--ink-soft);margin-bottom:18px;max-width:58ch;font-size:1.02rem;}
+.about-copy strong{color:var(--ink);font-weight:600;}
+.status-card{
+  border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);
+  padding:22px 24px;box-shadow:var(--shadow);
+}
+.status-card .label{display:block;margin-bottom:12px;}
+.status-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule-soft);font-size:.92rem;}
+.status-row:last-child{border-bottom:none;}
+.status-row span:first-child{color:var(--ink-faint);}
+.status-row span:last-child{font-family:'IBM Plex Mono',monospace;font-size:.85rem;text-align:right;}
+.status-pill{display:inline-block;background:var(--accent-soft);color:var(--accent-ink);border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:600;}
 
-    /* ============================================================
-       SCROLLBAR
-    ============================================================ */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg2); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;}
+.skill-group{background:var(--surface);padding:26px 24px;}
+.skill-group h3{font-family:'IBM Plex Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--copper);margin-bottom:16px;}
+.skill-group ul{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-group li{
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:5px;padding:5px 10px;background:var(--paper);
+}
 
-    /* ============================================================
-       UTILITY
-    ============================================================ */
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding: 96px 0; }
-    .section-label {
-        display: inline-block;
-        font-size: .75rem;
-        font-weight: 600;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: var(--tag-bg);
-        padding: .3rem .85rem;
-        border-radius: 999px;
-        margin-bottom: 1rem;
-    }
-    .section-title {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(1.9rem, 4vw, 2.75rem);
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 1rem;
-        line-height: 1.2;
-    }
-    .section-sub {
-        font-size: 1.05rem;
-        color: var(--muted);
-        max-width: 560px;
-        line-height: 1.7;
-        margin-bottom: 3rem;
-    }
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.filter-btn{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;padding:8px 15px;
+  border:1px solid var(--rule);border-radius:999px;color:var(--ink-soft);
+}
+.filter-btn.active,.filter-btn:hover{border-color:var(--accent);color:var(--accent);}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;}
+.project-card{
+  border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;
+  display:flex;flex-direction:column;
+}
+.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.project-thumb{aspect-ratio:16/10;overflow:hidden;background:var(--surface-sunk);position:relative;}
+.project-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.project-card:hover .project-thumb img{transform:scale(1.05);}
+.project-thumb.noimg{display:flex;align-items:center;justify-content:center;background:
+  repeating-linear-gradient(135deg, var(--surface-sunk), var(--surface-sunk) 10px, var(--rule-soft) 10px, var(--rule-soft) 20px);}
+.project-thumb.noimg span{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-faint);background:var(--surface);border:1px solid var(--rule);padding:6px 12px;border-radius:6px;}
+.project-featured-badge{position:absolute;top:12px;left:12px;background:var(--copper);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 9px;border-radius:4px;}
+.project-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1;}
+.project-kicker{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;}
+.project-body h3{font-family:'IBM Plex Mono',monospace;font-size:1.08rem;font-weight:700;}
+.project-body p{color:var(--ink-soft);font-size:.92rem;flex:1;}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent-ink);background:var(--accent-soft);padding:3px 8px;border-radius:4px;}
+.project-links{display:flex;gap:16px;margin-top:4px;}
+.project-links a{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:5px;}
+.project-links a:hover{text-decoration:underline;}
 
-    /* ============================================================
-       NAV
-    ============================================================ */
-    .nav {
-        position: fixed;
-        top: 0; left: 0; right: 0;
-        z-index: 1000;
-        background: var(--nav-bg);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--border);
-        transition: background .35s, border-color .35s;
-    }
-    .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 68px;
-    }
-    .nav-logo {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.35rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-    }
-    .nav-links a {
-        font-size: .93rem;
-        font-weight: 500;
-        color: var(--muted);
-        transition: color .2s;
-        position: relative;
-    }
-    .nav-links a::after {
-        content: '';
-        position: absolute;
-        bottom: -4px; left: 0; right: 0;
-        height: 2px;
-        background: var(--accent);
-        transform: scaleX(0);
-        transition: transform .2s;
-        border-radius: 2px;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-right { display: flex; align-items: center; gap: 1rem; }
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.timeline{border-left:2px solid var(--rule);margin-left:6px;}
+.tl-item{position:relative;padding:0 0 44px 34px;}
+.tl-item:last-child{padding-bottom:4px;}
+.tl-item::before{
+  content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--accent);
+}
+.tl-item.current::before{background:var(--accent);}
+.tl-date{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:600;letter-spacing:.02em;display:block;margin-bottom:6px;}
+.tl-item h3{font-size:1.12rem;font-weight:700;margin-bottom:2px;}
+.tl-item .tl-org{color:var(--ink-soft);font-size:.92rem;margin-bottom:12px;}
+.tl-item ul{max-width:64ch;}
+.tl-item li{position:relative;padding-left:18px;color:var(--ink-soft);font-size:.92rem;margin-bottom:6px;}
+.tl-item li::before{content:'—';position:absolute;left:0;color:var(--ink-faint);}
 
-    /* Theme toggle */
-    .theme-toggle {
-        width: 46px; height: 24px;
-        background: var(--border);
-        border-radius: 999px;
-        position: relative;
-        transition: background .3s;
-        cursor: pointer;
-    }
-    .theme-toggle::after {
-        content: '';
-        position: absolute;
-        top: 3px; left: 3px;
-        width: 18px; height: 18px;
-        border-radius: 50%;
-        background: var(--accent);
-        transition: transform .3s;
-    }
-    [data-theme="dark"] .theme-toggle::after { transform: translateX(22px); }
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;}
+.contact-info p{color:var(--ink-soft);max-width:46ch;margin-bottom:28px;}
+.contact-list{display:flex;flex-direction:column;gap:16px;}
+.contact-list a,.contact-list div{display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:.9rem;}
+.contact-list .ic{width:34px;height:34px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem;}
+.contact-form-card{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:32px;box-shadow:var(--shadow);}
+.form-row{margin-bottom:18px;}
+.form-row label{display:block;font-family:'IBM Plex Mono',monospace;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:7px;}
+.form-row input,.form-row textarea{
+  width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:7px;
+  padding:12px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:.94rem;color:var(--ink);
+  transition:border-color .15s;
+}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent);}
+.form-row textarea{resize:vertical;min-height:120px;}
+.form-msg{font-family:'IBM Plex Mono',monospace;font-size:.82rem;margin-top:14px;padding:10px 14px;border-radius:6px;display:none;}
+.form-msg.ok{display:block;background:#E4F3E8;color:#1E6B37;}
+.form-msg.err{display:block;background:#FBE7E3;color:#A3391F;}
+[data-theme="dark"] .form-msg.ok{background:#123420;color:#7FD69A;}
+[data-theme="dark"] .form-msg.err{background:#3A1D16;color:#F0A38C;}
 
-    /* Hamburger */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        padding: .35rem;
-    }
-    .hamburger span {
-        display: block;
-        width: 24px; height: 2px;
-        background: var(--text);
-        border-radius: 2px;
-        transition: transform .3s, opacity .3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{border-top:1px solid var(--rule-soft);padding:32px 0;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-inner p{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-faint);}
+.footer-links{display:flex;gap:18px;}
+.footer-links a{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--ink-soft);}
+.footer-links a:hover{color:var(--accent);}
 
-    /* Mobile nav drawer */
-    .mobile-menu {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        background: var(--nav-bg);
-        border-top: 1px solid var(--border);
-        padding: 1rem 1.5rem;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-        padding: .75rem 0;
-        font-weight: 500;
-        color: var(--text);
-        border-bottom: 1px solid var(--border);
-        transition: color .2s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--accent); }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        padding-top: 68px;
-    }
-    /* Animated gradient mesh background */
-    .hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(ellipse 800px 600px at 70% 40%, rgba(var(--accent-rgb),.12) 0%, transparent 70%),
-            radial-gradient(ellipse 600px 500px at 20% 80%, rgba(139,92,246,.10) 0%, transparent 70%);
-        animation: meshPulse 8s ease-in-out infinite alternate;
-    }
-    @keyframes meshPulse {
-        0%  { opacity: 1; transform: scale(1)    rotate(0deg); }
-        100%{ opacity: .7; transform: scale(1.08) rotate(3deg); }
-    }
-    /* Floating blobs */
-    .blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        pointer-events: none;
-        animation: blobFloat 12s ease-in-out infinite alternate;
-    }
-    .blob-1 {
-        width: 520px; height: 520px;
-        background: rgba(var(--accent-rgb),.09);
-        top: -120px; right: -80px;
-        animation-delay: 0s;
-    }
-    .blob-2 {
-        width: 380px; height: 380px;
-        background: rgba(139,92,246,.08);
-        bottom: -60px; left: -60px;
-        animation-delay: -4s;
-    }
-    @keyframes blobFloat {
-        0%  { transform: translate(0,0)     scale(1); }
-        100%{ transform: translate(30px,40px) scale(1.08); }
-    }
-    .hero-inner {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 3rem;
-        position: relative;
-        z-index: 1;
-    }
-    .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        background: var(--tag-bg);
-        color: var(--accent);
-        padding: .4rem 1rem;
-        border-radius: 999px;
-        font-size: .8rem;
-        font-weight: 600;
-        letter-spacing: .05em;
-        margin-bottom: 1.5rem;
-        animation: fadeInUp .6s ease both;
-    }
-    .hero-badge .dot {
-        width: 8px; height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-        0%,100%{ transform: scale(1); opacity:1; }
-        50%     { transform: scale(1.5); opacity:.6; }
-    }
-    .hero-name {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
-        font-weight: 800;
-        line-height: 1.1;
-        color: var(--hero-text);
-        margin-bottom: .75rem;
-        animation: fadeInUp .7s .1s ease both;
-    }
-    .hero-name span {
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .hero-role {
-        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-        color: var(--muted);
-        margin-bottom: 1.5rem;
-        min-height: 2em;
-        animation: fadeInUp .8s .2s ease both;
-    }
-    .typing-cursor::after {
-        content: '|';
-        animation: blink .75s step-end infinite;
-        color: var(--accent);
-    }
-    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
-    .hero-bio {
-        font-size: 1.05rem;
-        color: var(--muted);
-        line-height: 1.75;
-        max-width: 520px;
-        margin-bottom: 2.25rem;
-        animation: fadeInUp .9s .3s ease both;
-    }
-    .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 2.5rem;
-        animation: fadeInUp 1s .4s ease both;
-    }
-    .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        color: #fff;
-        padding: .85rem 2rem;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: .95rem;
-        transition: transform .2s, box-shadow .2s;
-        box-shadow: 0 4px 20px rgba(var(--accent-rgb),.4);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(var(--accent-rgb),.5); }
-    .btn-outline {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        border: 2px solid var(--border);
-        color: var(--text);
-        padding: .83rem 1.8rem;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: .95rem;
-        transition: border-color .2s, color .2s, transform .2s;
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-    .hero-socials {
-        display: flex;
-        gap: 1rem;
-        animation: fadeInUp 1.1s .5s ease both;
-    }
-    .hero-social-link {
-        width: 42px; height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1.5px solid var(--border);
-        border-radius: 50%;
-        color: var(--muted);
-        font-size: 1rem;
-        transition: border-color .2s, color .2s, transform .2s;
-    }
-    .hero-social-link:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateY(-3px);
-    }
-
-    /* Profile image */
-    .hero-photo-wrap {
-        position: relative;
-        animation: fadeInRight 1s .3s ease both;
-    }
-    .hero-photo {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--border);
-        box-shadow: var(--shadow-lg);
-        position: relative;
-        z-index: 1;
-    }
-    .hero-photo-ring {
-        position: absolute;
-        inset: -16px;
-        border-radius: 50%;
-        border: 2px dashed rgba(var(--accent-rgb),.35);
-        animation: spin 18s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .hero-stats {
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-    }
-    .stat-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: .85rem 1.25rem;
-        text-align: center;
-        box-shadow: var(--shadow);
-        min-width: 90px;
-    }
-    .stat-num {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--accent);
-    }
-    .stat-lbl { font-size: .73rem; color: var(--muted); font-weight: 500; }
-
-    /* Scroll hint */
-    .scroll-hint {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .4rem;
-        color: var(--muted);
-        font-size: .78rem;
-        animation: fadeIn 2s 1.5s ease both;
-    }
-    .scroll-hint i { animation: bounce 2s ease-in-out infinite; }
-    @keyframes bounce {
-        0%,100%{ transform:translateY(0); }
-        50%     { transform:translateY(6px); }
-    }
-
-    /* ============================================================
-       ABOUT
-    ============================================================ */
-    #about { background: var(--bg2); }
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-    }
-    .about-photo {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 24px;
-        object-fit: cover;
-        box-shadow: var(--shadow-lg);
-        border: 3px solid var(--border);
-    }
-    .about-text p {
-        color: var(--muted);
-        font-size: 1.02rem;
-        line-height: 1.78;
-        margin-bottom: 1rem;
-    }
-    .skills-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
-    .skill-cat h4 {
-        font-size: .8rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: .6rem;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .skill-tag {
-        background: var(--tag-bg);
-        color: var(--tag-text);
-        padding: .28rem .75rem;
-        border-radius: 999px;
-        font-size: .78rem;
-        font-weight: 600;
-    }
-    .about-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-    }
-
-    /* ============================================================
-       PROJECTS
-    ============================================================ */
-    .filter-bar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .6rem;
-        margin-bottom: 2.5rem;
-    }
-    .filter-btn {
-        padding: .45rem 1.2rem;
-        border-radius: 999px;
-        font-size: .86rem;
-        font-weight: 600;
-        border: 2px solid var(--border);
-        color: var(--muted);
-        background: var(--card);
-        transition: all .2s;
-    }
-    .filter-btn.active, .filter-btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        background: var(--tag-bg);
-    }
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-        gap: 1.75rem;
-    }
-    .project-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: transform .3s, box-shadow .3s;
-        display: flex;
-        flex-direction: column;
-    }
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
-    }
-    .project-thumb {
-        width: 100%;
-        height: 210px;
-        object-fit: cover;
-        background: var(--bg2);
-        border-bottom: 1px solid var(--border);
-    }
-    .project-thumb-placeholder {
-        width: 100%;
-        height: 210px;
-        background: linear-gradient(135deg, var(--tag-bg), var(--bg2));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        border-bottom: 1px solid var(--border);
-    }
-    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .project-category {
-        display: inline-block;
-        font-size: .7rem;
-        font-weight: 700;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: .6rem;
-    }
-    .project-title {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: .6rem;
-    }
-    .project-desc {
-        font-size: .9rem;
-        color: var(--muted);
-        line-height: 1.65;
-        flex: 1;
-        margin-bottom: 1.2rem;
-    }
-    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.2rem; }
-    .project-tag {
-        background: var(--bg2);
-        color: var(--muted);
-        padding: .22rem .65rem;
-        border-radius: 6px;
-        font-size: .73rem;
-        font-weight: 600;
-        border: 1px solid var(--border);
-    }
-    .project-links { display: flex; gap: .75rem; }
-    .project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: .35rem;
-        font-size: .84rem;
-        font-weight: 600;
-        color: var(--accent);
-        border: 1.5px solid var(--accent);
-        padding: .38rem .9rem;
-        border-radius: 8px;
-        transition: background .2s, color .2s;
-    }
-    .project-link:hover { background: var(--accent); color: #fff; }
-    .project-link.ghost { border-color: var(--border); color: var(--muted); }
-    .project-link.ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* Featured badge */
-    .project-card.featured {
-        border-color: rgba(var(--accent-rgb),.4);
-        box-shadow: 0 0 0 2px rgba(var(--accent-rgb),.12), var(--shadow);
-    }
-    .featured-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: .3rem;
-        background: linear-gradient(135deg,var(--accent),var(--accent2));
-        color: #fff;
-        font-size: .68rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        padding: .22rem .7rem;
-        border-radius: 999px;
-        margin-bottom: .6rem;
-    }
-
-    /* ============================================================
-       SKILLS
-    ============================================================ */
-    #skills { background: var(--bg2); }
-    .skills-section-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 1.25rem;
-    }
-    .skill-block {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 1.5rem 1rem;
-        text-align: center;
-        box-shadow: var(--shadow);
-        transition: transform .2s, box-shadow .2s;
-    }
-    .skill-block:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .skill-block i {
-        font-size: 2rem;
-        color: var(--accent);
-        margin-bottom: .75rem;
-    }
-    .skill-block-name {
-        font-size: .88rem;
-        font-weight: 600;
-        color: var(--text);
-    }
-    .skill-block-level {
-        font-size: .73rem;
-        color: var(--muted);
-        margin-top: .25rem;
-    }
-
-    /* ============================================================
-       EXPERIENCE
-    ============================================================ */
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: .5rem; top: .5rem; bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-    .timeline-item {
-        position: relative;
-        margin-bottom: 2.5rem;
-        padding-left: 1.5rem;
-    }
-    .timeline-dot {
-        position: absolute;
-        left: -1.75rem;
-        top: .35rem;
-        width: 14px; height: 14px;
-        border-radius: 50%;
-        background: var(--accent);
-        border: 3px solid var(--bg);
-        box-shadow: 0 0 0 3px rgba(var(--accent-rgb),.25);
-    }
-    .timeline-date {
-        font-size: .78rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: .35rem;
-    }
-    .timeline-role {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: var(--text);
-    }
-    .timeline-company {
-        font-size: .9rem;
-        color: var(--muted);
-        margin-bottom: .6rem;
-    }
-    .timeline-desc {
-        font-size: .9rem;
-        color: var(--muted);
-        line-height: 1.7;
-    }
-    .timeline-desc li { margin-bottom: .3rem; padding-left: 1rem; position: relative; }
-    .timeline-desc li::before { content:'▹'; position:absolute; left:0; color:var(--accent); }
-
-    /* ============================================================
-       CONTACT
-    ============================================================ */
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr;
-        gap: 4rem;
-        align-items: start;
-    }
-    .contact-info h3 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 1rem;
-    }
-    .contact-info p {
-        color: var(--muted);
-        line-height: 1.7;
-        font-size: .97rem;
-        margin-bottom: 2rem;
-    }
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: .85rem;
-        margin-bottom: 1rem;
-        color: var(--muted);
-        font-size: .93rem;
-    }
-    .contact-item i {
-        width: 38px; height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--tag-bg);
-        color: var(--accent);
-        border-radius: 10px;
-        font-size: .95rem;
-        flex-shrink: 0;
-    }
-    .contact-socials-row {
-        display: flex;
-        gap: .75rem;
-        margin-top: 1.5rem;
-    }
-    .social-btn {
-        width: 42px; height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--card);
-        border: 1.5px solid var(--border);
-        border-radius: 12px;
-        color: var(--muted);
-        font-size: 1rem;
-        transition: all .2s;
-    }
-    .social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-
-    /* Form */
-    .contact-form-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 2.5rem;
-        box-shadow: var(--shadow);
-    }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label {
-        display: block;
-        font-size: .85rem;
-        font-weight: 600;
-        color: var(--text);
-        margin-bottom: .45rem;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        width: 100%;
-        background: var(--bg);
-        border: 1.5px solid var(--border);
-        border-radius: 12px;
-        padding: .85rem 1rem;
-        font-size: .95rem;
-        color: var(--text);
-        font-family: inherit;
-        transition: border-color .2s, box-shadow .2s;
-        outline: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(var(--accent-rgb),.12);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--muted); }
-    .form-group textarea { resize: vertical; min-height: 130px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .submit-btn {
-        width: 100%;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        color: #fff;
-        padding: 1rem;
-        border-radius: 12px;
-        font-size: 1rem;
-        font-weight: 700;
-        font-family: inherit;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: .6rem;
-        transition: opacity .2s, transform .2s;
-        box-shadow: 0 4px 20px rgba(var(--accent-rgb),.4);
-    }
-    .submit-btn:hover:not(:disabled) { opacity: .9; transform: translateY(-2px); }
-    .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
-    .form-message {
-        margin-top: 1rem;
-        padding: .85rem 1rem;
-        border-radius: 10px;
-        font-size: .9rem;
-        font-weight: 600;
-        display: none;
-        text-align: center;
-    }
-    .form-message.success { background: #d1fae5; color: #065f46; display: block; }
-    .form-message.error   { background: #fee2e2; color: #991b1b; display: block; }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-        background: var(--bg2);
-        border-top: 1px solid var(--border);
-        padding: 2.5rem 0;
-        text-align: center;
-    }
-    footer .footer-logo {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1rem;
-        display: inline-block;
-    }
-    footer .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-    }
-    footer .footer-links a {
-        font-size: .88rem;
-        color: var(--muted);
-        transition: color .2s;
-    }
-    footer .footer-links a:hover { color: var(--accent); }
-    footer p { font-size: .82rem; color: var(--muted); }
-
-    /* ============================================================
-       ANIMATIONS (scroll reveal via JS class)
-    ============================================================ */
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-        opacity: 0;
-        transform: translateX(30px);
-        transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInRight {
-        from { opacity: 0; transform: translateX(30px); }
-        to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 900px) {
-        .hero-inner { grid-template-columns: 1fr; text-align: center; }
-        .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
-        .hero-photo { width: 220px; height: 220px; }
-        .hero-actions { justify-content: center; }
-        .hero-socials { justify-content: center; }
-        .hero-stats { justify-content: center; }
-        .about-grid { grid-template-columns: 1fr; }
-        .about-photo { max-width: 280px; margin: 0 auto; }
-        .contact-grid { grid-template-columns: 1fr; }
-        .form-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-        .nav-links { display: none; }
-        .hamburger { display: flex; }
-        .section { padding: 72px 0; }
-        .projects-grid { grid-template-columns: 1fr; }
-        .hero-badge { font-size: .72rem; }
-    }
-    @media (max-width: 480px) {
-        .hero-name { font-size: 2rem; }
-        .contact-form-card { padding: 1.5rem; }
-        .skills-section-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ============================================================
-       SECTION-SPECIFIC BG ALTERNATION
-    ============================================================ */
-    #hero, #projects, #experience, #contact { background: var(--bg); }
-    #about, #skills { background: var(--bg2); }
-    </style>
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}
+  .hero-stats{grid-template-columns:1fr;max-width:220px;}
+  .hero-stat{border-right:none;border-bottom:1px solid var(--rule);}
+  .hero-stat:last-child{border-bottom:none;}
+  .section{padding:76px 0;}
+}
+</style>
 </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112631399-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-112631399-1');
-</script>
-
 <body>
 
-
-<!-- ============================================================
-     NAVIGATION
-============================================================ -->
-<nav class="nav" id="navbar">
-    <div class="container">
-        <div class="nav-inner">
-            <a href="#home" class="nav-logo">OyelekeSeun</a>
-
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-            <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode"></button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home"       onclick="closeMobileMenu()">Home</a>
-            <a href="#about"      onclick="closeMobileMenu()">About</a>
-            <a href="#projects"   onclick="closeMobileMenu()">Projects</a>
-            <a href="#skills"     onclick="closeMobileMenu()">Skills</a>
-            <a href="#experience" onclick="closeMobileMenu()">Experience</a>
-            <a href="#contact"    onclick="closeMobileMenu()">Contact</a>
-        </div>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo">oyeleke<span>.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+      <a href="/resume" class="btn btn-ghost" style="display:none" id="navCvBtn">CV</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <a href="/resume">View CV</a>
+  </div>
 </nav>
 
-<!-- ============================================================
-     HERO
-============================================================ -->
-<section class="hero section" id="home">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+<header class="hero" id="top">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-kicker"><span class="dot-live"></span> Open to Skilled Worker sponsorship · Greater Manchester, UK</div>
+    <p class="hero-prompt">$ whoami<span class="cursor"></span></p>
+    <h1>Oluseun Oyeleke<br><span class="accent">Backend Engineer.</span></h1>
+    <p class="hero-lede">I design and ship the APIs that move money and data reliably — 6+ years across fintech, payments, HR and AI systems. PHP/Laravel, Python/FastAPI, React. Currently finishing an MSc Computing in the UK.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View my work →</a>
+      <a href="/resume" class="btn btn-ghost">View CV</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>6+</b><span>Years exp.</span></div>
+      <div class="hero-stat"><b>15+</b><span>Projects shipped</span></div>
+      <div class="hero-stat"><b>4</b><span>Payment gateways</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section" id="about">
     <div class="container">
-        <div class="hero-inner">
-            <!-- Left content -->
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Available for opportunities
-                </div>
-                <h1 class="hero-name">
-                    Hi, I'm <span>Oyeleke<br>Oluseun</span>
-                </h1>
-                <p class="hero-role">
-                    <span id="typing-text" class="typing-cursor"></span>
-                </p>
-                <p class="hero-bio">
-                    Full-Stack Software Engineer with 5+ years building scalable web applications,
-                    REST APIs and AI-powered tools. Passionate about clean code, great user experiences
-                    and solving real-world problems with technology.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">
-                        <i class="fas fa-rocket"></i> View My Work
-                    </a>
-                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
-                        <i class="fas fa-file-pdf"></i> View CV
-                    </a>
-                </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="hero-social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="hero-social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:oyelekeseun@outlook.com" class="hero-social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://oyelekeseun.vercel.app" target="_blank" rel="noopener" class="hero-social-link" title="Live Site">
-                        <i class="fas fa-globe"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right: photo -->
-            <div class="hero-photo-wrap">
-                <div class="hero-photo-ring"></div>
-                <img
-                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
-                    alt="Oyeleke Oluseun Emmanuel"
-                    class="hero-photo"
-                    onerror="this.src='img/good.jpg'"
-                />
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-num">5+</div>
-                        <div class="stat-lbl">Years Exp.</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-num">20+</div>
-                        <div class="stat-lbl">Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-num">10+</div>
-                        <div class="stat-lbl">Technologies</div>
-                    </div>
-                </div>
-            </div>
+      <div class="section-head reveal">
+        <span class="section-num mono">01 / About</span>
+        <h2 class="section-title">Backend-first, product-minded.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>I'm a backend software engineer based in <strong>Wigan, Greater Manchester</strong>, with deep expertise in <strong>PHP &amp; Laravel</strong>, <strong>Python &amp; FastAPI</strong>, and the payment infrastructure that sits underneath fintech and e-commerce products.</p>
+          <p>Over 6+ years I've designed and run production APIs integrating four payment providers (Stripe, Paystack, Flutterwave, Interswitch), built HR and payroll platforms used by real companies, and mentored engineers on code review and testing discipline along the way.</p>
+          <p>My most recent work is applied AI: I built an AI-powered CV-tailoring SaaS from scratch using FastAPI, React and OpenAI's GPT-4, and my MSc dissertation — <strong>GreenOps Scheduler</strong> — is a carbon-aware scheduling platform with its own recommendation engine and explanation layer. I care about systems that are correct under load and explainable to the people using them.</p>
         </div>
+        <div class="status-card reveal">
+          <span class="label">Status</span>
+          <div class="status-row"><span>Location</span><span>Wigan, Greater Manchester</span></div>
+          <div class="status-row"><span>Study</span><span>MSc Computing, Sunderland</span></div>
+          <div class="status-row"><span>Right to work</span><span class="status-pill">Graduate visa · late 2026</span></div>
+          <div class="status-row"><span>Open to</span><span>Backend · Fintech · AI</span></div>
+          <div class="status-row"><span>Response time</span><span>&lt; 24 hrs</span></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="scroll-hint">
-        <span>Scroll down</span>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-</section>
-
-<!-- ============================================================
-     ABOUT
-============================================================ -->
-<section class="section" id="about">
+  <section class="section" id="projects">
     <div class="container">
-        <div class="about-grid">
-            <div class="reveal-left">
-                <img
-                    src="https://media.licdn.com/dms/image/v2/C4D03AQFGgZgbHR-DBg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1617315934630?e=2147483647&v=beta&t=IkccbWfyrrqG46IQ-rZ8OeEbzZxQMHBmv91DpiKlfq4"
-                    alt="Oyeleke Oluseun Emmanuel"
-                    class="about-photo"
-                    onerror="this.src='img/good.jpg'"
-                />
-            </div>
-            <div class="reveal-right">
-                <span class="section-label">About Me</span>
-                <h2 class="section-title">Passionate Developer,<br>Lifelong Learner</h2>
-                <div class="about-text">
-                    <p>
-                        I'm a Full-Stack Software Engineer based in the UK, with deep expertise in
-                        PHP &amp; Laravel, Python, React and modern web technologies. I love turning
-                        complex problems into elegant, scalable solutions.
-                    </p>
-                    <p>
-                        Over the past 5+ years I've shipped production-grade HR platforms, accounting
-                        systems, AI-powered tools and REST APIs used by thousands of people. My recent
-                        work includes an AI CV tailoring application built with Python (FastAPI) and
-                        React that uses OpenAI to help candidates land their dream jobs.
-                    </p>
-                    <p>
-                        When I'm not coding, I'm contributing to open-source, mentoring junior
-                        developers, or exploring the latest in AI/ML tooling.
-                    </p>
-                </div>
+      <div class="section-head reveal">
+        <span class="section-num mono">02 / Projects</span>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-sub">Real applications I've designed, built and deployed — from an explainable AI scheduling engine to enterprise HR and payments platforms.</p>
+      </div>
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI &amp; Python</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="client">Client Work</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+      </div>
+      <div class="project-grid" id="projectGrid">
 
-                <div class="skills-grid">
-                    <div class="skill-cat">
-                        <h4>Frontend</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Bootstrap</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                        </div>
-                    </div>
-                    <div class="skill-cat">
-                        <h4>Backend</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Laravel</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">REST APIs</span>
-                        </div>
-                    </div>
-                    <div class="skill-cat">
-                        <h4>Databases</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">SQLite</span>
-                        </div>
-                    </div>
-                    <div class="skill-cat">
-                        <h4>DevOps &amp; Tools</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git &amp; GitHub</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Vercel</span>
-                            <span class="skill-tag">OpenAI API</span>
-                            <span class="skill-tag">Figma</span>
-                        </div>
-                    </div>
-                </div>
+        <article class="project-card reveal" data-cat="ai fullstack">
+          <div class="project-thumb noimg"><span>GreenOps Scheduler</span></div>
+          <div class="project-body">
+            <span class="project-kicker">MSc Dissertation · Full-Stack</span>
+            <h3>GreenOps Scheduler</h3>
+            <p>A carbon-aware web scheduler that recommends lower-carbon execution windows for SME batch workloads, with a constraint-aware recommendation engine and a plain-language explanation panel.</p>
+            <div class="tag-row"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">REST API</span></div>
+          </div>
+        </article>
 
-                <div class="about-links">
-                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="btn-primary">
-                        <i class="fab fa-github"></i> GitHub Profile
-                    </a>
-                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="btn-outline">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                    <a href="/resume.html" class="btn-outline" target="_blank" rel="noopener">
-                        <i class="fas fa-file-pdf"></i> View CV
-                    </a>
-                </div>
-            </div>
-        </div>
+        <article class="project-card reveal" data-cat="ai fullstack">
+          <div class="project-thumb"><span class="project-featured-badge">Featured</span><img src="img/projects/ai-cv-tailoring-tool.jpg" alt="AI CV Tailoring Tool screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">AI · Python · React</span>
+            <h3>AI CV Tailoring Tool</h3>
+            <p>An AI-powered SaaS platform that tailors CVs to job descriptions using OpenAI GPT-4, with document parsing, ATS optimisation and real-time downloadable output.</p>
+            <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">OpenAI API</span><span class="tag">Vercel</span></div>
+            <div class="project-links"><a href="https://ai-cv-tailoring-tool-89cy.vercel.app" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/Oluwablin" target="_blank" rel="noopener">GitHub →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client fullstack">
+          <div class="project-thumb"><img src="img/projects/page-financials.jpg" alt="Page Financials screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · Payroll / HRMS</span>
+            <h3>Page Financials</h3>
+            <p>Payroll and HRMS-focused business platform with backend process automation, built and maintained as Backend Engineer.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">HRMS</span></div>
+            <div class="project-links"><a href="https://pagefinancials.com" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client fullstack">
+          <div class="project-thumb"><img src="img/projects/craneburg-erp.jpg" alt="Craneburg ERP screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · ERP</span>
+            <h3>Craneburg ERP</h3>
+            <p>Enterprise suite covering HR, payroll and project operations, delivered ahead of schedule.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+            <div class="project-links"><a href="https://craneburg.vercel.app" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client fullstack">
+          <div class="project-thumb"><img src="img/projects/bulksmslive.jpg" alt="BulkSMSLive screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · API Platform</span>
+            <h3>BulkSMSLive</h3>
+            <p>Bulk messaging platform with backend API workflows and delivery tooling.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">REST API</span></div>
+            <div class="project-links"><a href="https://bulksmslive.com" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client fullstack">
+          <div class="project-thumb"><img src="img/projects/volunteer-africa.jpg" alt="Volunteer Africa screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · Web Platform</span>
+            <h3>Volunteer Africa</h3>
+            <p>Programme and content platform with client delivery and production support.</p>
+            <div class="tag-row"><span class="tag">CakePHP</span><span class="tag">PHP</span></div>
+            <div class="project-links"><a href="https://volunteer.africa" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client">
+          <div class="project-thumb"><img src="img/projects/inventory-system.jpg" alt="Inventory System screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · Internal Tool</span>
+            <h3>Inventory System</h3>
+            <p>Inventory application for stock visibility and operational reporting.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client">
+          <div class="project-thumb"><img src="img/projects/alumunite.jpg" alt="Alumunite screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · Education Platform</span>
+            <h3>Alumunite</h3>
+            <p>Alumni and education-focused platform with private backend services.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Private Backend</span></div>
+            <div class="project-links"><a href="https://alumunite.co" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client">
+          <div class="project-thumb"><img src="img/projects/nwantas.jpg" alt="Nwantas screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · School System</span>
+            <h3>Nwantas (Erudite)</h3>
+            <p>School management platform backed by private account and core microservices.</p>
+            <div class="tag-row"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Microservices</span></div>
+            <div class="project-links"><a href="https://nwantas.com" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="client fullstack">
+          <div class="project-thumb"><img src="img/projects/stagingdc.jpg" alt="StagingDC screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <span class="project-kicker">Client Work · Full-Stack</span>
+            <h3>StagingDC</h3>
+            <p>Public-facing platform with full-stack architecture and maintenance support.</p>
+            <div class="tag-row"><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div>
+            <div class="project-links"><a href="https://stagingdc.com" target="_blank" rel="noopener">Live site →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="personal">
+          <div class="project-thumb noimg"><span>KPI App</span></div>
+          <div class="project-body">
+            <span class="project-kicker">Personal · Full-Stack</span>
+            <h3>KPI Performance Review App</h3>
+            <p>Performance review and KPI tracking application.</p>
+            <div class="tag-row"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span></div>
+            <div class="project-links"><a href="https://github.com/Oluwablin" target="_blank" rel="noopener">GitHub →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="personal">
+          <div class="project-thumb noimg"><span>Law CRM</span></div>
+          <div class="project-body">
+            <span class="project-kicker">Personal · CRM</span>
+            <h3>Law CRM</h3>
+            <p>CRM platform built for law firms with customer and case workflow management.</p>
+            <div class="tag-row"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">CRM</span></div>
+            <div class="project-links"><a href="https://github.com/Oluwablin" target="_blank" rel="noopener">GitHub →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-cat="personal ai">
+          <div class="project-thumb noimg"><span>Wallet System</span></div>
+          <div class="project-body">
+            <span class="project-kicker">Personal · Fintech</span>
+            <h3>Wallet System</h3>
+            <p>Wallet and payment integration project with Paystack workflow support.</p>
+            <div class="tag-row"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Paystack</span></div>
+            <div class="project-links"><a href="https://github.com/Oluwablin" target="_blank" rel="noopener">GitHub →</a></div>
+          </div>
+        </article>
+
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================
-     PROJECTS
-============================================================ -->
-<section class="section" id="projects">
+  <section class="section" id="skills">
     <div class="container">
-        <div class="reveal">
-            <span class="section-label">Portfolio</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-sub">A selection of real-world applications I've designed, built and deployed — from AI-powered tools to enterprise HR platforms.</p>
+      <div class="section-head reveal">
+        <span class="section-num mono">03 / Skills</span>
+        <h2 class="section-title">Tech stack</h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <ul><li>PHP</li><li>Laravel</li><li>Python</li><li>FastAPI</li><li>Node.js</li><li>REST APIs</li><li>GraphQL</li></ul>
         </div>
-
-        <div class="filter-bar reveal">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="ai">AI &amp; Python</button>
-            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-            <button class="filter-btn" data-filter="client">Client Work</button>
-            <button class="filter-btn" data-filter="personal">Personal</button>
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <ul><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Vue.js</li><li>Tailwind CSS</li></ul>
         </div>
-
-        <div class="projects-grid" id="projectsGrid">
-
-            <!-- 1. AI CV Tailoring Tool -->
-            <div class="project-card featured" data-category="ai personal">
-                <img
-                    src="img/projects/ai-cv-tailoring-tool.jpg"
-                    alt="AI CV Tailoring Tool"
-                    class="project-thumb"
-                    onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🤖</div>'"
-                />
-                <div class="project-body">
-                    <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
-                    <span class="project-category">AI · Python · React</span>
-                    <h3 class="project-title">AI CV Tailoring Tool</h3>
-                    <p class="project-desc">
-                        An AI-powered SaaS platform that tailors CVs to specific job descriptions using OpenAI,
-                        with parsing, ATS optimization and downloadable output.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">FastAPI</span>
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">OpenAI API</span>
-                        <span class="project-tag">Vercel</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://ai-cv-tailoring-tool-89cy.vercel.app/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/Oluwablin?tab=repositories" target="_blank" rel="noopener" class="project-link ghost">
-                            <i class="fab fa-github"></i> My GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Volunteer Africa -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/volunteer-africa.jpg" alt="Volunteer Africa" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🌍</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · Web Platform</span>
-                    <h3 class="project-title">Volunteer Africa</h3>
-                    <p class="project-desc">Program and content platform with client delivery and production support.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">CakePHP</span>
-                        <span class="project-tag">Client Work</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://volunteer.africa/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. BulkSMSLive -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/bulksmslive.jpg" alt="BulkSMSLive" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>✉️</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · API Platform</span>
-                    <h3 class="project-title">BulkSMSLive</h3>
-                    <p class="project-desc">Bulk messaging platform with backend API workflows and delivery tooling.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">REST API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://www.bulksmslive.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Inventory System -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/inventory-system.jpg" alt="Inventory System" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>📦</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · Internal Tool</span>
-                    <h3 class="project-title">Inventory System</h3>
-                    <p class="project-desc">Inventory application for stock visibility and operational reporting.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="http://66.70.202.147/inventory/#/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Page Financials -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/page-financials.jpg" alt="Page Financials" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>💳</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · Payroll</span>
-                    <h3 class="project-title">Page Financials</h3>
-                    <p class="project-desc">Payroll and HRMS-focused business platform with backend process automation.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">HRMS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://pagefinancials.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Alumunite -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/alumunite.jpg" alt="Alumunite" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🎓</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · Education Platform</span>
-                    <h3 class="project-title">Alumunite</h3>
-                    <p class="project-desc">Alumni and education-focused platform with private backend services.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">Private Backend</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://alumunite.co/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        <a href="https://github.com/Oluwablin/team-alumunite" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Backend (Private)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Nwantas (Erudite) -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/nwantas.jpg" alt="Nwantas" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏫</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · School System</span>
-                    <h3 class="project-title">Nwantas (Erudite)</h3>
-                    <p class="project-desc">School management platform backed by private Erudite account and core services.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">Private Microservices</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://nwantas.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        <a href="https://github.com/Oluwablin/erudite-account-service" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Account Service</a>
-                        <a href="https://github.com/Oluwablin/erudite-core-service" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> Core Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 8. StagingDC -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/stagingdc.jpg" alt="StagingDC" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · Full-Stack</span>
-                    <h3 class="project-title">StagingDC</h3>
-                    <p class="project-desc">Public-facing platform with full-stack architecture and maintenance support.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://stagingdc.com/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 9. Craneburg ERP -->
-            <div class="project-card" data-category="fullstack client">
-                <img src="img/projects/craneburg-erp.jpg" alt="Craneburg ERP" class="project-thumb" onerror="this.outerHTML='<div class=\'project-thumb-placeholder\'>🏗️</div>'" />
-                <div class="project-body">
-                    <span class="project-category">Client Work · ERP</span>
-                    <h3 class="project-title">Craneburg ERP</h3>
-                    <p class="project-desc">Enterprise suite covering HR, payroll and project operations.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://craneburg.vercel.app/" target="_blank" rel="noopener" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 10. KPI -->
-            <div class="project-card" data-category="personal">
-                <div class="project-thumb-placeholder">📈</div>
-                <div class="project-body">
-                    <span class="project-category">Personal · Full-Stack</span>
-                    <h3 class="project-title">KPI Performance Review App</h3>
-                    <p class="project-desc">Performance review and KPI tracking application.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">Bootstrap</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/KPI" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 11. Law CRM -->
-            <div class="project-card" data-category="personal">
-                <div class="project-thumb-placeholder">⚖️</div>
-                <div class="project-body">
-                    <span class="project-category">Personal · CRM</span>
-                    <h3 class="project-title">Law CRM</h3>
-                    <p class="project-desc">CRM platform built for law firms with customer and case workflow management.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">CRM</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/law-crm" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 12. Wallet System -->
-            <div class="project-card" data-category="personal fullstack">
-                <div class="project-thumb-placeholder">💼</div>
-                <div class="project-body">
-                    <span class="project-category">Personal · Fintech</span>
-                    <h3 class="project-title">Wallet System</h3>
-                    <p class="project-desc">Wallet and payment integration project built with Paystack workflow support.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">Laravel</span>
-                        <span class="project-tag">Paystack</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/wallet-system" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 13. Blog RSS -->
-            <div class="project-card" data-category="personal">
-                <div class="project-thumb-placeholder">📰</div>
-                <div class="project-body">
-                    <span class="project-category">Personal · Node.js</span>
-                    <h3 class="project-title">Blog RSS Aggregator</h3>
-                    <p class="project-desc">Personal feed aggregator that checks subscribed RSS sources for updates.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Node.js</span>
-                        <span class="project-tag">RSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/blog" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 14. Portfolio Website -->
-            <div class="project-card" data-category="personal">
-                <div class="project-thumb-placeholder">🧑‍💻</div>
-                <div class="project-body">
-                    <span class="project-category">Personal · Frontend</span>
-                    <h3 class="project-title">Portfolio Website</h3>
-                    <p class="project-desc">This portfolio site source code and deployment setup.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Oluwablin/myportfolio.github.io" target="_blank" rel="noopener" class="project-link ghost"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- /projects-grid -->
+        <div class="skill-group">
+          <h3>Data</h3>
+          <ul><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>SQL Server</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Payments &amp; APIs</h3>
+          <ul><li>Stripe</li><li>Paystack</li><li>Flutterwave</li><li>Interswitch</li><li>SendGrid</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>AI &amp; ML</h3>
+          <ul><li>OpenAI GPT-4</li><li>Prompt Engineering</li><li>PDF/DOCX Processing</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Cloud &amp; DevOps</h3>
+          <ul><li>Docker</li><li>CI/CD</li><li>Vercel</li><li>Azure</li><li>Nginx</li><li>GitHub Actions</li></ul>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================
-     SKILLS
-============================================================ -->
-<section class="section" id="skills">
+  <section class="section" id="experience">
     <div class="container">
-        <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
-            <span class="section-label">Tech Stack</span>
-            <h2 class="section-title">Skills &amp; Technologies</h2>
+      <div class="section-head reveal">
+        <span class="section-num mono">04 / Experience</span>
+        <h2 class="section-title">Career</h2>
+        <p class="section-sub">A track record of shipping production systems across fintech, HR, education and AI.</p>
+      </div>
+      <div class="timeline reveal">
+
+        <div class="tl-item current">
+          <span class="tl-date">Sep 2025 — Present · UK</span>
+          <h3>MSc Computing</h3>
+          <p class="tl-org">University of Sunderland, United Kingdom</p>
+          <ul>
+            <li>Dissertation: GreenOps Scheduler — a carbon-aware web scheduling platform with a constraint-aware recommendation engine and explanation layer (Next.js, TypeScript).</li>
+          </ul>
         </div>
 
-        <div class="skills-section-grid reveal">
-            <div class="skill-block"><i class="fab fa-php"></i><div class="skill-block-name">PHP</div><div class="skill-block-level">Expert</div></div>
-            <div class="skill-block"><i class="fab fa-laravel"></i><div class="skill-block-name">Laravel</div><div class="skill-block-level">Expert</div></div>
-            <div class="skill-block"><i class="fab fa-python"></i><div class="skill-block-name">Python</div><div class="skill-block-level">Advanced</div></div>
-            <div class="skill-block"><i class="fab fa-react"></i><div class="skill-block-name">React</div><div class="skill-block-level">Advanced</div></div>
-            <div class="skill-block"><i class="fab fa-js-square"></i><div class="skill-block-name">JavaScript</div><div class="skill-block-level">Expert</div></div>
-            <div class="skill-block"><i class="fab fa-node-js"></i><div class="skill-block-name">Node.js</div><div class="skill-block-level">Intermediate</div></div>
-            <div class="skill-block"><i class="fas fa-database"></i><div class="skill-block-name">MySQL</div><div class="skill-block-level">Expert</div></div>
-            <div class="skill-block"><i class="fas fa-leaf"></i><div class="skill-block-name">MongoDB</div><div class="skill-block-level">Intermediate</div></div>
-            <div class="skill-block"><i class="fab fa-docker"></i><div class="skill-block-name">Docker</div><div class="skill-block-level">Intermediate</div></div>
-            <div class="skill-block"><i class="fab fa-git-alt"></i><div class="skill-block-name">Git</div><div class="skill-block-level">Expert</div></div>
-            <div class="skill-block"><i class="fas fa-robot"></i><div class="skill-block-name">OpenAI API</div><div class="skill-block-level">Advanced</div></div>
-            <div class="skill-block"><i class="fab fa-figma"></i><div class="skill-block-name">Figma</div><div class="skill-block-level">Intermediate</div></div>
+        <div class="tl-item">
+          <span class="tl-date">Jan 2026 — Feb 2026 · UK</span>
+          <h3>Full-Stack Developer &amp; AI Engineer Intern</h3>
+          <p class="tl-org">AI CV Tailoring Tool — Weeply, United Kingdom</p>
+          <ul>
+            <li>Designed and built an AI-powered SaaS CV-tailoring application using Python (FastAPI) and React, deployed on Vercel.</li>
+            <li>Integrated OpenAI GPT-4 to analyse CVs and job descriptions, generating ATS-optimised, keyword-aligned output in real time.</li>
+            <li>Built a PDF/DOCX parsing and generation pipeline with async processing and SendGrid notifications.</li>
+          </ul>
         </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Sep 2022 — Sep 2025</span>
+          <h3>Software Engineer (Backend)</h3>
+          <p class="tl-org">Fullware Solutions Limited — Lagos, Nigeria</p>
+          <ul>
+            <li>Designed and deployed secure REST APIs for fintech and e-commerce solutions.</li>
+            <li>Integrated four payment gateways (Stripe, Paystack, Flutterwave, Interswitch) for seamless transaction flows.</li>
+            <li>Improved API performance through query optimisation and caching strategies.</li>
+            <li>Mentored junior developers and introduced code review standards.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Sep 2021 — May 2022</span>
+          <h3>Backend Engineer</h3>
+          <p class="tl-org">Page Financials (Forsterfields &amp; Griffins) — Lagos, Nigeria</p>
+          <ul>
+            <li>Built and maintained backend services for HRMS Payroll and the Fintech-in-a-Box product.</li>
+            <li>Enhanced application reliability with database optimisation and server-side caching.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Jan 2021 — Oct 2021</span>
+          <h3>Software Engineer</h3>
+          <p class="tl-org">Software Business Solutions &amp; Consulting (SBSC) — Lagos, Nigeria</p>
+          <ul>
+            <li>Developed robust APIs for enterprise and client-facing applications.</li>
+            <li>Wrote complex SQL queries and stored procedures; contributed to Azure-hosted deployments.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Mar 2020 — Mar 2021</span>
+          <h3>Software Developer</h3>
+          <p class="tl-org">Cavidel Limited — Lagos, Nigeria</p>
+          <ul>
+            <li>Developed Officemate HR, Accounting and Hospital applications, integrated with secure REST APIs.</li>
+            <li>Refactored legacy systems into modern architectures, reducing maintenance costs.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Jan 2019 — Feb 2020</span>
+          <h3>Backend Developer</h3>
+          <p class="tl-org">Phosmobile Digital Solutions — Lagos, Nigeria</p>
+          <ul>
+            <li>Built APIs for loan management and disbursement platforms using Laravel and GraphQL.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-date">Sep 2018 — Dec 2018</span>
+          <h3>Web Developer Intern</h3>
+          <p class="tl-org">HNG Tech — Lagos, Nigeria</p>
+          <ul>
+            <li>Built and maintained web applications with HTML, CSS, PHP and Laravel.</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================
-     EXPERIENCE
-============================================================ -->
-<section class="section" id="experience">
+  <section class="section" id="contact">
     <div class="container">
-        <div class="reveal">
-            <span class="section-label">Career</span>
-            <h2 class="section-title">Work Experience</h2>
-            <p class="section-sub">A track record of building production systems across fintech, HR, education and AI industries.</p>
+      <div class="section-head reveal">
+        <span class="section-num mono">05 / Contact</span>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="section-sub">Whether it's a role, a project, or a question about sponsorship and my availability — my inbox is open.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p>I respond to enquiries within 24 hours. You can also find me on LinkedIn and GitHub.</p>
+          <div class="contact-list">
+            <a href="mailto:oyelekeseun@outlook.com"><span class="ic">@</span> oyelekeseun@outlook.com</a>
+            <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener"><span class="ic">in</span> linkedin.com/in/oluseun-oyeleke</a>
+            <a href="https://github.com/Oluwablin" target="_blank" rel="noopener"><span class="ic">gh</span> github.com/Oluwablin</a>
+            <div><span class="ic">loc</span> Wigan, Greater Manchester, UK</div>
+          </div>
         </div>
-
-        <div class="timeline reveal">
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2026 – Feb 2026 &nbsp;|&nbsp; UK</div>
-                <div class="timeline-role">Full-Stack Developer &amp; AI Engineer Intern</div>
-                <div class="timeline-company">AI CV Tailoring Tool — Weeply, United Kingdom</div>
-                <ul class="timeline-desc">
-                    <li>Designed and built an AI-powered SaaS CV tailoring application using Python (FastAPI) and React, deployed on Vercel.</li>
-                    <li>Integrated OpenAI GPT-4 to analyse CVs and job descriptions, generating ATS-optimised tailored CVs.</li>
-                    <li>Built PDF/DOCX parsing and PDF generation pipeline with async processing and SendGrid notifications.</li>
-                    <li>Created a responsive React frontend with multi-step UX, real-time CV preview and download functionality.</li>
-                </ul>
+        <div class="contact-form-card reveal">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="cf-name">Full name *</label>
+              <input type="text" id="cf-name" name="name" required maxlength="120" autocomplete="name" />
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Sep 2022 – Dec 2025</div>
-                <div class="timeline-role">Senior Backend Engineer</div>
-                <div class="timeline-company">Fullware Solutions Limited — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Designed and deployed secure RESTful APIs for fintech and e-commerce solutions.</li>
-                    <li>Integrated multiple payment gateways (Stripe, Paystack, Flutterwave, Interswitch) for seamless transaction flows.</li>
-                    <li>Improved API performance through query optimisation and caching strategies.</li>
-                    <li>Mentored junior developers and introduced coding best practices.</li>
-                </ul>
+            <div class="form-row">
+              <label for="cf-email">Email *</label>
+              <input type="email" id="cf-email" name="email" required maxlength="160" autocomplete="email" />
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Sep 2021 – May 2022</div>
-                <div class="timeline-role">Backend Engineer</div>
-                <div class="timeline-company">Page Financials (Forsterfields &amp; Griffins) — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Built and maintained backend services for HRMS Payroll and the Fintech in a Box product.</li>
-                    <li>Enhanced application reliability with database optimisation and server-side caching.</li>
-                    <li>Delivered new features in collaboration with Product Managers within agile sprints.</li>
-                </ul>
+            <div class="form-row">
+              <label for="cf-subject">Subject *</label>
+              <input type="text" id="cf-subject" name="subject" required maxlength="180" />
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2021 – Oct 2021</div>
-                <div class="timeline-role">Software Engineer</div>
-                <div class="timeline-company">Software Business Solutions &amp; Consulting (SBSC) — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Developed robust APIs for enterprise and client-facing applications.</li>
-                    <li>Supported deployed applications by troubleshooting and resolving end-user issues.</li>
-                    <li>Wrote complex SQL queries and stored procedures for efficient data retrieval.</li>
-                    <li>Contributed to cloud-hosted solutions leveraging Azure.</li>
-                </ul>
+            <div class="form-row">
+              <label for="cf-message">Message *</label>
+              <textarea id="cf-message" name="message" required maxlength="4000"></textarea>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Mar 2020 – Mar 2021</div>
-                <div class="timeline-role">Software Developer</div>
-                <div class="timeline-company">Cavidel Limited — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Developed Officemate HR, Accounting and Hospital applications, integrating them with secure RESTful APIs.</li>
-                    <li>Refactored legacy systems into modern architectures, reducing maintenance costs.</li>
-                    <li>Collaborated with project managers to deliver major features ahead of deadlines.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2019 – Feb 2020</div>
-                <div class="timeline-role">Backend Developer</div>
-                <div class="timeline-company">Phosmobile Digital Solutions — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Built APIs for loan management and disbursement platforms using Laravel and GraphQL.</li>
-                    <li>Partnered with frontend developers (Vue.js) to deliver seamless user experiences.</li>
-                    <li>Designed backend solutions to support secure and efficient e-commerce capabilities.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Sep 2018 – Dec 2018</div>
-                <div class="timeline-role">Web Developer Intern</div>
-                <div class="timeline-company">HNG Tech — Lagos, Nigeria</div>
-                <ul class="timeline-desc">
-                    <li>Assisted in building and maintaining web applications with HTML, CSS, PHP and Laravel.</li>
-                    <li>Implemented user requirements into functional prototypes.</li>
-                </ul>
-            </div>
-
+            <input type="text" name="website" id="cf-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
+            <button type="submit" class="btn btn-primary" id="cfSubmit" style="width:100%;justify-content:center;">Send message</button>
+            <div class="form-msg" id="cfMsg" role="status"></div>
+          </form>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================
-     CONTACT
-============================================================ -->
-<section class="section" id="contact">
-    <div class="container">
-        <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 3rem;">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-sub" style="margin:0 auto;">
-                Whether you have a project in mind, a job opportunity, or just want to say hi —
-                my inbox is always open.
-            </p>
-        </div>
+</main>
 
-        <div class="contact-grid">
-            <!-- Info -->
-            <div class="reveal-left">
-                <h3>Contact Information</h3>
-                <p>I respond to all enquiries within 24 hours. You can also find me on LinkedIn and GitHub.</p>
-
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:oyelekeseun@outlook.com">oyelekeseun@outlook.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>United Kingdom</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <a href="https://oyelekeseun.vercel.app" target="_blank" rel="noopener">oyelekeseun.vercel.app</a>
-                </div>
-
-                <div class="contact-socials-row">
-                    <a href="https://github.com/Oluwablin" target="_blank" rel="noopener" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:oyelekeseun@outlook.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://twitter.com/oyelekeseun" target="_blank" rel="noopener" class="social-btn" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-                </div>
-            </div>
-
-            <!-- Form -->
-            <div class="reveal-right">
-                <div class="contact-form-card">
-                    <!--
-                        Contact form uses a secure backend endpoint.
-                        Do not store private credentials in this HTML file.
-                    -->
-                    <form id="contactForm">
-                        <input type="text" name="website" id="cf-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cf-name">Full Name *</label>
-                                <input type="text" id="cf-name" name="from_name" placeholder="John Smith" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="cf-email">Email *</label>
-                                <input type="email" id="cf-email" name="from_email" placeholder="john@example.com" required />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cf-subject">Subject *</label>
-                            <input type="text" id="cf-subject" name="subject" placeholder="Project Enquiry" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="cf-message">Message *</label>
-                            <textarea id="cf-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                        <div class="form-message" id="formMessage"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
 <footer>
-    <div class="container">
-        <a href="#home" class="footer-logo">OyelekeSeun</a>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <p>Oyeleke Oluseun Emmanuel &copy; <span id="year"></span> &mdash; Built with care in the UK.</p>
+  <div class="container footer-inner">
+    <p>Oyeleke Oluseun Emmanuel © <span id="year"></span> — Built with care in the UK.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Oluwablin" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/oluseun-oyeleke/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/resume">CV</a>
     </div>
+  </div>
 </footer>
 
-<!-- Back to top -->
-<a href="#home" id="backToTop" style="
-    position:fixed; bottom:2rem; right:2rem;
-    width:44px; height:44px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
-    color:#fff; border-radius:50%;
-    display:none; align-items:center; justify-content:center;
-    font-size:1.1rem; box-shadow:var(--shadow-lg);
-    transition:opacity .3s, transform .3s;
-    z-index:999;
-" aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
-</a>
-
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
-<script>
-// ── Theme ──────────────────────────────────────────────────────
-const html = document.documentElement;
-const themeBtn = document.getElementById('themeToggle');
-
-function applyTheme(dark) {
-    html.setAttribute('data-theme', dark ? 'dark' : 'light');
-    localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
-}
-
-// Detect preference: saved → system → default light
-const saved = localStorage.getItem('portfolio-theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(saved ? saved === 'dark' : prefersDark);
-
-themeBtn.addEventListener('click', () => {
-    applyTheme(html.getAttribute('data-theme') !== 'dark');
-});
-
-// ── Hamburger ──────────────────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-});
-
-function closeMobileMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-}
-
-// ── Typing animation ───────────────────────────────────────────
-const roles = [
-    'Senior Backend Engineer',
-    'Laravel & PHP Specialist',
-    'Python & AI Developer',
-    'Full-Stack Architect',
-    'OpenAI & SaaS Builder',
-];
-let roleIndex = 0, charIndex = 0, deleting = false;
-const typingEl = document.getElementById('typing-text');
-
-function typeRole() {
-    const current = roles[roleIndex];
-    if (!deleting) {
-        typingEl.textContent = current.slice(0, ++charIndex);
-        if (charIndex === current.length) {
-            deleting = true;
-            setTimeout(typeRole, 2200);
-            return;
-        }
-    } else {
-        typingEl.textContent = current.slice(0, --charIndex);
-        if (charIndex === 0) {
-            deleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-        }
-    }
-    setTimeout(typeRole, deleting ? 55 : 95);
-}
-typeRole();
-
-// ── Scroll reveal ──────────────────────────────────────────────
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-        }
-    });
-}, { threshold: 0.12 });
-revealEls.forEach(el => observer.observe(el));
-
-// Stagger project cards
-document.querySelectorAll('.project-card').forEach((card, i) => {
-    card.style.transitionDelay = (i * 0.07) + 's';
-    observer.observe(card);
-    card.classList.add('reveal');
-});
-
-// ── Project filter ─────────────────────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        projectCards.forEach(card => {
-            const cats = card.dataset.category || '';
-            const match = filter === 'all' || cats.includes(filter);
-            card.style.display = match ? 'flex' : 'none';
-        });
-    });
-});
-
-// Make project media open each card's primary link
-projectCards.forEach(card => {
-    const media = card.querySelector('.project-thumb, .project-thumb-placeholder');
-    const primaryLink = card.querySelector('.project-links .project-link');
-    if (!media || !primaryLink) return;
-
-    const openPrimaryLink = () => {
-        window.open(primaryLink.href, '_blank', 'noopener');
-    };
-
-    media.style.cursor = 'pointer';
-    media.setAttribute('role', 'link');
-    media.setAttribute('tabindex', '0');
-    media.addEventListener('click', openPrimaryLink);
-    media.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openPrimaryLink();
-        }
-    });
-});
-
-// ── Back to top ────────────────────────────────────────────────
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
-});
-
-// ── Year ───────────────────────────────────────────────────────
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// ── Contact Form (secure backend endpoint) ─────────────────────
-const CONTACT_API_URL =
-    (window.PORTFOLIO_CONFIG && window.PORTFOLIO_CONFIG.contactApiUrl)
-    || (window.location.hostname.includes('github.io')
-        ? 'https://oyelekeseun.vercel.app/api/contact'
-        : '/api/contact');
-
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('formMessage');
-    msg.className = 'form-message';
-    msg.style.display = 'none';
-
-    // Basic validation
-    const name    = document.getElementById('cf-name').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
-    const subject = document.getElementById('cf-subject').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
-    const website = document.getElementById('cf-website').value.trim();
-
-    if (!name || !email || !subject || !message) {
-        msg.textContent = 'Please fill in all fields.';
-        msg.className = 'form-message error';
-        return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-
-    try {
-        const response = await fetch(CONTACT_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name,
-                email,
-                subject,
-                message,
-                website
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Could not send message');
-        }
-
-        msg.textContent = '✅ Message sent! I\'ll get back to you within 24 hours.';
-        msg.className = 'form-message success';
-        this.reset();
-    } catch (err) {
-        // Fallback: open mailto link so the message is never lost
-        const mailto = `mailto:oyelekeseun@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\n\n' + message)}`;
-        msg.innerHTML = '⚠️ Could not send automatically. <a href="' + mailto + '" style="color:inherit;font-weight:700;">Click here to email directly</a>.';
-        msg.className = 'form-message error';
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    }
-});
-
-// ── Active nav on scroll ───────────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-    });
-    navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current
-            ? 'var(--accent)' : '';
-    });
-});
-</script>
-
+<script src="js/site-config.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
